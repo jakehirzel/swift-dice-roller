@@ -13,6 +13,8 @@
 		230297221DE496FA00071694 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 230297211DE496FA00071694 /* Assets.xcassets */; };
 		230297251DE496FA00071694 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 230297231DE496FA00071694 /* LaunchScreen.storyboard */; };
 		2302972D1DE497E500071694 /* License.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 2302972C1DE497E500071694 /* License.rtf */; };
+		2302972F1DE4983F00071694 /* RollLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2302972E1DE4983F00071694 /* RollLogic.swift */; };
+		230297311DE4987800071694 /* CustomAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 230297301DE4987800071694 /* CustomAnimation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		230297241DE496FA00071694 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		230297261DE496FA00071694 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2302972C1DE497E500071694 /* License.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = License.rtf; sourceTree = "<group>"; };
+		2302972E1DE4983F00071694 /* RollLogic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RollLogic.swift; sourceTree = "<group>"; };
+		230297301DE4987800071694 /* CustomAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomAnimation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +64,8 @@
 				2302971A1DE496FA00071694 /* AppDelegate.swift */,
 				2302971C1DE496FA00071694 /* ViewController.swift */,
 				2302971E1DE496FA00071694 /* Main.storyboard */,
+				2302972E1DE4983F00071694 /* RollLogic.swift */,
+				230297301DE4987800071694 /* CustomAnimation.swift */,
 				230297211DE496FA00071694 /* Assets.xcassets */,
 				230297231DE496FA00071694 /* LaunchScreen.storyboard */,
 				230297261DE496FA00071694 /* Info.plist */,
@@ -141,8 +147,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2302972F1DE4983F00071694 /* RollLogic.swift in Sources */,
 				2302971D1DE496FA00071694 /* ViewController.swift in Sources */,
 				2302971B1DE496FA00071694 /* AppDelegate.swift in Sources */,
+				230297311DE4987800071694 /* CustomAnimation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
