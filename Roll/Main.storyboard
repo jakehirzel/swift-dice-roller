@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BV1-FR-VrT">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tXr-a1-R10">
+            <objects>
+                <viewController storyboardIdentifier="Main" id="BV1-FR-VrT" customClass="ViewController" customModule="Roll" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="8aa-yV-Osq"/>
+                        <viewControllerLayoutGuide type="bottom" id="qHh-Mt-9TT"/>
+                    </layoutGuides>
+                    <view key="view" multipleTouchEnabled="YES" contentMode="scaleToFill" id="3se-qz-xqx">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Akm-3Q-WZb">
+                                <rect key="frame" x="16" y="527" width="343" height="120"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="120" id="hPa-qN-0Va"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="dataSource" destination="3se-qz-xqx" id="Csk-nv-1ha"/>
+                                    <outlet property="delegate" destination="3se-qz-xqx" id="64x-EF-d39"/>
+                                </connections>
+                            </pickerView>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="giG-Fr-Cf4" userLabel="Segmented Control Stack">
+                                <rect key="frame" x="42" y="491" width="290" height="28"/>
+                                <subviews>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="K4c-Ok-9Rf">
+                                        <rect key="frame" x="0.0" y="0.0" width="141" height="29"/>
+                                        <segments>
+                                            <segment title="1 Die"/>
+                                            <segment title="2 Dice"/>
+                                        </segments>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <connections>
+                                            <action selector="diceQuantityChanged:" destination="BV1-FR-VrT" eventType="valueChanged" id="Hcy-6K-EIR"/>
+                                        </connections>
+                                    </segmentedControl>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="gfy-ya-31J">
+                                        <rect key="frame" x="149" y="0.0" width="141" height="29"/>
+                                        <segments>
+                                            <segment title="Standard"/>
+                                            <segment title="Shuffled"/>
+                                        </segments>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <connections>
+                                            <action selector="distributionChanged:" destination="BV1-FR-VrT" eventType="valueChanged" id="cic-1i-imP"/>
+                                        </connections>
+                                    </segmentedControl>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Y7J-oD-CQi" userLabel="Results Stack">
+                                <rect key="frame" x="16" y="268.5" width="343" height="119.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="50" translatesAutoresizingMaskIntoConstraints="NO" id="naf-KU-65b">
+                                        <rect key="frame" x="0.0" y="0.0" width="171.5" height="119.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="100"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="50" translatesAutoresizingMaskIntoConstraints="NO" id="pt9-a0-x7Q">
+                                        <rect key="frame" x="171.5" y="0.0" width="171.5" height="119.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="100"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y6x-ZL-Ehm">
+                                <rect key="frame" x="143" y="412" width="88" height="55"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="36"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <state key="normal" title="ROLL"/>
+                                <connections>
+                                    <action selector="rollButtonTapped:" destination="BV1-FR-VrT" eventType="touchUpInside" id="zrZ-DD-wDV"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.47058823529999999" blue="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="y6x-ZL-Ehm" firstAttribute="top" secondItem="Y7J-oD-CQi" secondAttribute="bottom" constant="24" id="DNK-ar-kCD"/>
+                            <constraint firstItem="Akm-3Q-WZb" firstAttribute="top" secondItem="giG-Fr-Cf4" secondAttribute="bottom" constant="8" id="Dno-It-Vdn"/>
+                            <constraint firstItem="Y7J-oD-CQi" firstAttribute="leading" secondItem="3se-qz-xqx" secondAttribute="leadingMargin" id="GNU-GP-Gkm"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="Akm-3Q-WZb" secondAttribute="leading" id="Jee-p7-Skl"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Akm-3Q-WZb" secondAttribute="trailing" id="Ju6-cg-7mh"/>
+                            <constraint firstItem="y6x-ZL-Ehm" firstAttribute="centerX" secondItem="giG-Fr-Cf4" secondAttribute="centerX" id="aFS-td-zsf"/>
+                            <constraint firstItem="giG-Fr-Cf4" firstAttribute="top" secondItem="y6x-ZL-Ehm" secondAttribute="bottom" constant="24" id="aGU-QE-8Wr"/>
+                            <constraint firstItem="qHh-Mt-9TT" firstAttribute="top" secondItem="Akm-3Q-WZb" secondAttribute="bottom" constant="20" id="cJL-vF-Hb0"/>
+                            <constraint firstItem="giG-Fr-Cf4" firstAttribute="centerX" secondItem="Akm-3Q-WZb" secondAttribute="centerX" id="tHs-yx-uah"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Y7J-oD-CQi" secondAttribute="trailing" id="wW3-NC-QgF"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="dicePicker" destination="Akm-3Q-WZb" id="is0-ET-LXt"/>
+                        <outlet property="diceQuantitySegmentedControl" destination="K4c-Ok-9Rf" id="oFv-SR-x3f"/>
+                        <outlet property="distributionSegmentedControl" destination="gfy-ya-31J" id="lel-EJ-E2G"/>
+                        <outlet property="resultLabel" destination="naf-KU-65b" id="kzp-8a-yIL"/>
+                        <outlet property="resultLabelTwo" destination="pt9-a0-x7Q" id="DBM-1P-C60"/>
+                        <outlet property="rollButton" destination="y6x-ZL-Ehm" id="wie-7l-FmC"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="32.799999999999997" y="37.331334332833585"/>
+        </scene>
+    </scenes>
+</document>
