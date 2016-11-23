@@ -22,22 +22,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Akm-3Q-WZb">
-                                <rect key="frame" x="16" y="320" width="288" height="140"/>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="140" id="hPa-qN-0Va"/>
-                                </constraints>
-                                <connections>
-                                    <outlet property="dataSource" destination="3se-qz-xqx" id="Csk-nv-1ha"/>
-                                    <outlet property="delegate" destination="3se-qz-xqx" id="64x-EF-d39"/>
-                                </connections>
-                            </pickerView>
-                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="giG-Fr-Cf4" userLabel="Segmented Control Stack">
-                                <rect key="frame" x="16" y="284" width="288.5" height="28"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="giG-Fr-Cf4" userLabel="Segmented Control Stack">
+                                <rect key="frame" x="16" y="432" width="288" height="28"/>
                                 <subviews>
                                     <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="K4c-Ok-9Rf">
-                                        <rect key="frame" x="0.0" y="0.0" width="140.5" height="29"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="107.5" height="29"/>
                                         <segments>
                                             <segment title="1 Die"/>
                                             <segment title="2 Dice"/>
@@ -48,7 +37,7 @@
                                         </connections>
                                     </segmentedControl>
                                     <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="gfy-ya-31J">
-                                        <rect key="frame" x="148.5" y="0.0" width="140" height="29"/>
+                                        <rect key="frame" x="115.5" y="0.0" width="142" height="29"/>
                                         <segments>
                                             <segment title="Standard"/>
                                             <segment title="Shuffled"/>
@@ -58,10 +47,17 @@
                                             <action selector="distributionChanged:" destination="BV1-FR-VrT" eventType="valueChanged" id="cic-1i-imP"/>
                                         </connections>
                                     </segmentedControl>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoLight" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CJO-Rz-Lhg">
+                                        <rect key="frame" x="265.5" y="0.0" width="22.5" height="28"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <state key="normal">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                    </button>
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Y7J-oD-CQi" userLabel="Results Stack">
-                                <rect key="frame" x="13" y="42.5" width="295" height="131.5"/>
+                                <rect key="frame" x="13" y="22.5" width="295" height="131.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="50" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="naf-KU-65b">
                                         <rect key="frame" x="0.0" y="0.0" width="137.5" height="131.5"/>
@@ -84,7 +80,7 @@
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y6x-ZL-Ehm">
-                                <rect key="frame" x="105.5" y="194" width="110" height="70"/>
+                                <rect key="frame" x="105.5" y="174" width="110" height="70"/>
                                 <fontDescription key="fontDescription" type="system" weight="thin" pointSize="48"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <state key="normal" title="ROLL"/>
@@ -92,19 +88,30 @@
                                     <action selector="rollButtonTapped:" destination="BV1-FR-VrT" eventType="touchUpInside" id="zrZ-DD-wDV"/>
                                 </connections>
                             </button>
+                            <pickerView contentMode="scaleToFill" showsSelectionIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Akm-3Q-WZb">
+                                <rect key="frame" x="16" y="264" width="288" height="160"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="160" id="hPa-qN-0Va"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="dataSource" destination="3se-qz-xqx" id="Csk-nv-1ha"/>
+                                    <outlet property="delegate" destination="3se-qz-xqx" id="64x-EF-d39"/>
+                                </connections>
+                            </pickerView>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.47058823529999999" blue="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="giG-Fr-Cf4" secondAttribute="trailing" id="8V5-IP-4zn"/>
                             <constraint firstItem="y6x-ZL-Ehm" firstAttribute="top" secondItem="Y7J-oD-CQi" secondAttribute="bottom" constant="20" id="DNK-ar-kCD"/>
-                            <constraint firstItem="Akm-3Q-WZb" firstAttribute="top" secondItem="giG-Fr-Cf4" secondAttribute="bottom" constant="8" id="Dno-It-Vdn"/>
+                            <constraint firstItem="giG-Fr-Cf4" firstAttribute="top" secondItem="Akm-3Q-WZb" secondAttribute="bottom" constant="8" id="Gij-PY-2HB"/>
                             <constraint firstItem="Y7J-oD-CQi" firstAttribute="centerX" secondItem="y6x-ZL-Ehm" secondAttribute="centerX" id="HyU-SH-VDs"/>
                             <constraint firstAttribute="leadingMargin" secondItem="Akm-3Q-WZb" secondAttribute="leading" id="Jee-p7-Skl"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Akm-3Q-WZb" secondAttribute="trailing" id="Ju6-cg-7mh"/>
+                            <constraint firstItem="qHh-Mt-9TT" firstAttribute="top" secondItem="giG-Fr-Cf4" secondAttribute="bottom" constant="20" id="Sez-iE-1ae"/>
                             <constraint firstItem="y6x-ZL-Ehm" firstAttribute="centerX" secondItem="giG-Fr-Cf4" secondAttribute="centerX" id="aFS-td-zsf"/>
-                            <constraint firstItem="giG-Fr-Cf4" firstAttribute="top" secondItem="y6x-ZL-Ehm" secondAttribute="bottom" constant="20" id="aGU-QE-8Wr"/>
-                            <constraint firstItem="qHh-Mt-9TT" firstAttribute="top" secondItem="Akm-3Q-WZb" secondAttribute="bottom" constant="20" id="cJL-vF-Hb0"/>
                             <constraint firstItem="giG-Fr-Cf4" firstAttribute="leading" secondItem="3se-qz-xqx" secondAttribute="leadingMargin" id="dbr-B7-b0Z"/>
+                            <constraint firstItem="Akm-3Q-WZb" firstAttribute="top" secondItem="y6x-ZL-Ehm" secondAttribute="bottom" constant="20" id="w9V-dv-kGX"/>
                         </constraints>
                     </view>
                     <connections>

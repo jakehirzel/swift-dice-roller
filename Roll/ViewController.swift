@@ -48,9 +48,14 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         resultLabel.layer.borderWidth = 1.0
         resultLabel.layer.borderColor = UIColor.black.cgColor
         resultLabel.layer.cornerRadius = 8.0
+        
         resultLabelTwo.layer.borderWidth = 1.0
         resultLabelTwo.layer.borderColor = UIColor.black.cgColor
         resultLabelTwo.layer.cornerRadius = 8.0
+        
+        dicePicker.layer.borderWidth = 1.0
+        dicePicker.layer.borderColor = UIColor.white.cgColor
+        dicePicker.layer.cornerRadius = 4.0
         
         // Ensure resultLabelTwo is invisible
         resultLabelTwo.isHidden = true
