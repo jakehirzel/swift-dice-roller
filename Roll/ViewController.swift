@@ -29,6 +29,8 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     
     var newShuffledSeries: Bool = true
 
+    // MARK: ViewController Lifecycle / View Handling
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -44,6 +46,15 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         
         // Ensure resultLabelTwo is invisible
         resultLabelTwo.isHidden = true
+        
+    }
+    
+    override func motionEnded(_ motion: UIEventSubtype, with event: UIEvent?) {
+        
+        // Initiate a roll when device is shaken
+        if motion == .motionShake {
+            rollButtonTapped(rollButton)
+        }
         
     }
 
