@@ -44,6 +44,14 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         distributionSegmentedControl.selectedSegmentIndex = 0
         diceQuantitySegmentedControl.selectedSegmentIndex = 0
         
+        // Add borders to the result labels
+        resultLabel.layer.borderWidth = 1.0
+        resultLabel.layer.borderColor = UIColor.black.cgColor
+        resultLabel.layer.cornerRadius = 8.0
+        resultLabelTwo.layer.borderWidth = 1.0
+        resultLabelTwo.layer.borderColor = UIColor.black.cgColor
+        resultLabelTwo.layer.cornerRadius = 8.0
+        
         // Ensure resultLabelTwo is invisible
         resultLabelTwo.isHidden = true
         
