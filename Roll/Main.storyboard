@@ -53,6 +53,9 @@
                                         <state key="normal">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <segue destination="uqq-4Y-lgB" kind="presentation" modalPresentationStyle="overFullScreen" id="NOE-Q7-9vh"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -126,6 +129,62 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="32.799999999999997" y="37.331334332833585"/>
+        </scene>
+        <!--Info Modal-->
+        <scene sceneID="QT1-uS-oI9">
+            <objects>
+                <viewController storyboardIdentifier="InfoModal" id="uqq-4Y-lgB" userLabel="Info Modal" customClass="InfoViewController" customModule="Roll" customModuleProvider="target" sceneMemberID="viewController">
+                    <visualEffectView key="view" opaque="NO" contentMode="scaleToFill" id="oA8-uK-QtC">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="qC6-d7-uVv">
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            <subviews>
+                                <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aFP-Is-77u" userLabel="Info Text">
+                                    <rect key="frame" x="8" y="90" width="304" height="300"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="300" id="Kg9-mW-TJr"/>
+                                    </constraints>
+                                    <string key="text">Tap the ROLL button or shake your device to roll. STANDARD provides a traditional random roll. SHUFFLED will randomly provide each number in the sequence once before repeating.</string>
+                                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="21"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                    <connections>
+                                        <outletCollection property="gestureRecognizers" destination="kfL-RZ-LQZ" appends="YES" id="bOf-1l-ZHZ"/>
+                                    </connections>
+                                </label>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BHZ-ne-acn">
+                                    <rect key="frame" x="137" y="398" width="46" height="30"/>
+                                    <state key="normal" title="Button"/>
+                                    <connections>
+                                        <segue destination="2he-Hd-Zh3" kind="unwind" unwindAction="unwindToMainWithSegue:" id="VHv-bg-0yV"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <constraints>
+                                <constraint firstItem="aFP-Is-77u" firstAttribute="centerY" secondItem="qC6-d7-uVv" secondAttribute="centerY" id="50R-Xf-0a2"/>
+                                <constraint firstItem="BHZ-ne-acn" firstAttribute="top" secondItem="aFP-Is-77u" secondAttribute="bottom" constant="8" id="PN8-pb-b1l"/>
+                                <constraint firstAttribute="trailing" secondItem="aFP-Is-77u" secondAttribute="trailing" constant="8" id="byM-Fm-Z72"/>
+                                <constraint firstItem="BHZ-ne-acn" firstAttribute="centerX" secondItem="aFP-Is-77u" secondAttribute="centerX" id="qHu-nc-6fe"/>
+                                <constraint firstItem="aFP-Is-77u" firstAttribute="leading" secondItem="qC6-d7-uVv" secondAttribute="leading" constant="8" id="xF7-Xn-E6C"/>
+                            </constraints>
+                        </view>
+                        <blurEffect style="extraLight"/>
+                    </visualEffectView>
+                    <connections>
+                        <outlet property="closeButton" destination="BHZ-ne-acn" id="otV-nL-EYF"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Zmd-UT-8oZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="2he-Hd-Zh3" userLabel="Exit" sceneMemberID="exit"/>
+                <tapGestureRecognizer id="kfL-RZ-LQZ">
+                    <connections>
+                        <segue destination="2he-Hd-Zh3" kind="unwind" unwindAction="unwindToMainWithSegue:" id="GzB-aX-6gM"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="855" y="36.25"/>
         </scene>
     </scenes>
 </document>

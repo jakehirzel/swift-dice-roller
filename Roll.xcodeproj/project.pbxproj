@@ -15,6 +15,7 @@
 		2302972F1DE4983F00071694 /* RollLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2302972E1DE4983F00071694 /* RollLogic.swift */; };
 		230297311DE4987800071694 /* CustomAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 230297301DE4987800071694 /* CustomAnimation.swift */; };
 		230297331DE49BC500071694 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 230297321DE49BC500071694 /* Main.storyboard */; };
+		23EAC7121DE72F0A000E661A /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23EAC7111DE72F0A000E661A /* InfoViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		2302972E1DE4983F00071694 /* RollLogic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RollLogic.swift; sourceTree = "<group>"; };
 		230297301DE4987800071694 /* CustomAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomAnimation.swift; sourceTree = "<group>"; };
 		230297321DE49BC500071694 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		23EAC7111DE72F0A000E661A /* InfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 			children = (
 				2302971A1DE496FA00071694 /* AppDelegate.swift */,
 				2302971C1DE496FA00071694 /* ViewController.swift */,
+				23EAC7111DE72F0A000E661A /* InfoViewController.swift */,
 				230297321DE49BC500071694 /* Main.storyboard */,
 				2302972E1DE4983F00071694 /* RollLogic.swift */,
 				230297301DE4987800071694 /* CustomAnimation.swift */,
@@ -151,6 +154,7 @@
 				2302971D1DE496FA00071694 /* ViewController.swift in Sources */,
 				2302971B1DE496FA00071694 /* AppDelegate.swift in Sources */,
 				230297311DE4987800071694 /* CustomAnimation.swift in Sources */,
+				23EAC7121DE72F0A000E661A /* InfoViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -306,6 +310,7 @@
 				2302972B1DE496FA00071694 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
