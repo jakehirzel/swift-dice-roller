@@ -155,17 +155,23 @@
                                     </connections>
                                 </label>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BHZ-ne-acn">
-                                    <rect key="frame" x="137" y="398" width="46" height="30"/>
-                                    <state key="normal" title="Button"/>
+                                    <rect key="frame" x="136" y="398" width="48" height="30"/>
+                                    <state key="normal" title="CLOSE"/>
                                     <connections>
-                                        <segue destination="2he-Hd-Zh3" kind="unwind" unwindAction="unwindToMainWithSegue:" id="VHv-bg-0yV"/>
+                                        <segue destination="2he-Hd-Zh3" kind="unwind" unwindAction="unwindToMainWithSegue:" id="hXK-cC-tSV"/>
                                     </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gyE-Vf-u3r">
+                                    <rect key="frame" x="58" y="436" width="204" height="30"/>
+                                    <state key="normal" title="RATE US ON THE APP STORE"/>
                                 </button>
                             </subviews>
                             <constraints>
                                 <constraint firstItem="aFP-Is-77u" firstAttribute="centerY" secondItem="qC6-d7-uVv" secondAttribute="centerY" id="50R-Xf-0a2"/>
                                 <constraint firstItem="BHZ-ne-acn" firstAttribute="top" secondItem="aFP-Is-77u" secondAttribute="bottom" constant="8" id="PN8-pb-b1l"/>
+                                <constraint firstItem="gyE-Vf-u3r" firstAttribute="top" secondItem="BHZ-ne-acn" secondAttribute="bottom" constant="8" id="Vph-Uc-fSa"/>
                                 <constraint firstAttribute="trailing" secondItem="aFP-Is-77u" secondAttribute="trailing" constant="8" id="byM-Fm-Z72"/>
+                                <constraint firstItem="gyE-Vf-u3r" firstAttribute="centerX" secondItem="BHZ-ne-acn" secondAttribute="centerX" id="ejy-EJ-pVW"/>
                                 <constraint firstItem="BHZ-ne-acn" firstAttribute="centerX" secondItem="aFP-Is-77u" secondAttribute="centerX" id="qHu-nc-6fe"/>
                                 <constraint firstItem="aFP-Is-77u" firstAttribute="leading" secondItem="qC6-d7-uVv" secondAttribute="leading" constant="8" id="xF7-Xn-E6C"/>
                             </constraints>
@@ -180,7 +186,7 @@
                 <exit id="2he-Hd-Zh3" userLabel="Exit" sceneMemberID="exit"/>
                 <tapGestureRecognizer id="kfL-RZ-LQZ">
                     <connections>
-                        <segue destination="2he-Hd-Zh3" kind="unwind" unwindAction="unwindToMainWithSegue:" id="GzB-aX-6gM"/>
+                        <segue destination="2he-Hd-Zh3" kind="unwind" unwindAction="unwindToMainWithSegue:" id="FIy-fg-e9L"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
