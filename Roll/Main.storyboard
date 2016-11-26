@@ -103,7 +103,7 @@
                                 </connections>
                             </pickerView>
                         </subviews>
-                        <color key="backgroundColor" red="0.0" green="0.47058823529999999" blue="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.10564099997282028" green="0.64889258146286011" blue="0.96056348085403442" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="giG-Fr-Cf4" secondAttribute="trailing" id="8V5-IP-4zn"/>
                             <constraint firstItem="y6x-ZL-Ehm" firstAttribute="top" secondItem="Y7J-oD-CQi" secondAttribute="bottom" constant="20" id="DNK-ar-kCD"/>
@@ -164,6 +164,9 @@
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gyE-Vf-u3r">
                                     <rect key="frame" x="58" y="436" width="204" height="30"/>
                                     <state key="normal" title="RATE US ON THE APP STORE"/>
+                                    <connections>
+                                        <action selector="rateButtonTapped:" destination="uqq-4Y-lgB" eventType="touchUpInside" id="lYb-Uu-Uk4"/>
+                                    </connections>
                                 </button>
                             </subviews>
                             <constraints>
