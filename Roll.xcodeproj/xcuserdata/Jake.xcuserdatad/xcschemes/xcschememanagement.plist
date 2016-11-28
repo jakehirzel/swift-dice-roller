@@ -9,10 +9,25 @@
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
+		<key>WatchKit App (Notification).xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>2</integer>
+		</dict>
+		<key>WatchKit App.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
 		<key>230297161DE496FA00071694</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>238041321DEC6E9900890226</key>
 		<dict>
 			<key>primary</key>
 			<true/>
