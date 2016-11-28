@@ -148,9 +148,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         
     }
     
-    // MARK: Actions
-    
-    @IBAction func rollButtonTapped(_ sender: UIButton) {
+    func updateResultLabels() {
         
         switch pickerChoice!.face {
         case .num:
@@ -209,6 +207,20 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         
     }
     
+    // MARK: Actions
+    
+    @IBAction func rollButtonTapped(_ sender: UIButton) {
+        
+        updateResultLabels()
+        
+    }
+    
+    @IBAction func diceTapped(_ sender: UITapGestureRecognizer) {
+        
+        updateResultLabels()
+        
+    }
+    
     @IBAction func distributionChanged(_ sender: UISegmentedControl) {
         
         // Any change in settings resets the shuffle seed
@@ -244,6 +256,8 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         }
         
     }
+    
+    
     
     @IBAction func unwindToMain(segue: UIStoryboardSegue) {
         

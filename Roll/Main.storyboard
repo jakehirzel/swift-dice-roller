@@ -81,6 +81,9 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="0lN-dS-j87" appends="YES" id="FJT-6q-IyY"/>
+                                </connections>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y6x-ZL-Ehm">
                                 <rect key="frame" x="105.5" y="174" width="110" height="70"/>
@@ -127,6 +130,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="0lN-dS-j87">
+                    <connections>
+                        <action selector="diceTapped:" destination="BV1-FR-VrT" id="brD-S2-bLF"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="32.799999999999997" y="37.331334332833585"/>
         </scene>
