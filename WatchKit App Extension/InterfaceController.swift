@@ -47,12 +47,22 @@ class InterfaceController: WKInterfaceController {
         
         // Ensure resultLabelTwo is displayed properly
         if RollOptions.sharedInstance.diceQuantity == .two {
-            resultLabelTwo.setHidden(false)
+            self.animate(
+                withDuration: 0.25,
+                animations: { [weak self] in
+                    self?.resultLabelTwo.setHidden(false)
+                }
+            )
         }
         else {
-            resultLabelTwo.setHidden(true)
+            self.animate(
+                withDuration: 0.25,
+                animations: { [weak self] in
+                    self?.resultLabelTwo.setHidden(true)
+                }
+            )
         }
-        
+
     }
     
     override func didDeactivate() {
