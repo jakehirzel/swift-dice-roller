@@ -24,11 +24,6 @@
                                 </label>
                             </items>
                         </group>
-                        <picker height="37" alignment="center" verticalAlignment="center" focusStyle="stack" id="8Ji-Yq-UBA">
-                            <connections>
-                                <action selector="pickerChanged:" destination="AgC-eL-Hgc" id="7iP-YQ-3q2"/>
-                            </connections>
-                        </picker>
                         <button width="1" alignment="left" verticalAlignment="center" title="ROLL" id="2vK-7h-GMg">
                             <connections>
                                 <action selector="rollButtonTapped" destination="AgC-eL-Hgc" id="LHy-OS-0o8"/>
@@ -36,7 +31,6 @@
                         </button>
                     </items>
                     <connections>
-                        <outlet property="dicePicker" destination="8Ji-Yq-UBA" id="POa-Fg-lsQ"/>
                         <outlet property="resultLabel" destination="wcV-5G-dW4" id="8Ho-lW-wNh"/>
                         <outlet property="resultLabelTwo" destination="957-FF-wi1" id="V53-aR-Yke"/>
                         <outlet property="rollButton" destination="2vK-7h-GMg" id="0FE-B8-qa9"/>
@@ -51,10 +45,24 @@
             <objects>
                 <controller id="c2G-zw-fUh" userLabel="Options Interface Controller" customClass="OptionsInterfaceController" customModule="WatchKit_App_Extension">
                     <items>
-                        <switch width="1" alignment="left" verticalAlignment="center" title="Two Dice" id="1Vt-rU-jxm"/>
-                        <switch width="1" alignment="left" verticalAlignment="center" title="Shuffled" id="CFd-Zl-U7X"/>
+                        <picker height="40" alignment="center" verticalAlignment="center" focusStyle="sequence" indicatorMode="shownWhileFocused" id="8Ji-Yq-UBA">
+                            <connections>
+                                <action selector="pickerChanged:" destination="c2G-zw-fUh" id="Dk1-h5-BnO"/>
+                            </connections>
+                        </picker>
+                        <switch width="1" alignment="left" verticalAlignment="center" title="Two Dice" id="1Vt-rU-jxm">
+                            <connections>
+                                <action selector="twoDiceSwitchOn:" destination="c2G-zw-fUh" id="WVH-ni-fo4"/>
+                            </connections>
+                        </switch>
+                        <switch width="1" alignment="left" verticalAlignment="center" title="Shuffled" id="CFd-Zl-U7X">
+                            <connections>
+                                <action selector="shuffledSwitchOn:" destination="c2G-zw-fUh" id="AcH-MX-QG0"/>
+                            </connections>
+                        </switch>
                     </items>
                     <connections>
+                        <outlet property="dicePicker" destination="8Ji-Yq-UBA" id="SeD-9K-C6Q"/>
                         <outlet property="shuffledSwitch" destination="CFd-Zl-U7X" id="U34-Vx-8mv"/>
                         <outlet property="twoDiceSwitch" destination="1Vt-rU-jxm" id="Q7r-jQ-Wtt"/>
                         <segue destination="gCD-ec-Lc9" kind="relationship" relationship="nextPage" id="uUG-Pg-xNW"/>
@@ -68,8 +76,8 @@
             <objects>
                 <controller id="gCD-ec-Lc9">
                     <items>
-                        <label width="1" alignment="center" verticalAlignment="center" textAlignment="center" numberOfLines="7" id="B6a-bX-qo8">
-                            <string key="text">Rotate the Digital Crown to select the die type. Tap the "Roll" button or shake to roll. Selecting "Shuffled" provides each value once before repeating.</string>
+                        <label width="1" alignment="center" verticalAlignment="center" textAlignment="center" numberOfLines="8" id="B6a-bX-qo8">
+                            <string key="text">Tap the "Roll" button or shake to roll. Use the Digital Crown to select the die type on the Options Page. Selecting "Shuffled" provides each value once before repeating.</string>
                             <fontDescription key="font" type="system" weight="light" pointSize="12"/>
                         </label>
                     </items>

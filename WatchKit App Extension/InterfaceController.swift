@@ -7,6 +7,7 @@
 //
 
 import WatchKit
+import CoreMotion
 import Foundation
 
 
@@ -19,61 +20,56 @@ class InterfaceController: WKInterfaceController {
     @IBOutlet var dicePicker: WKInterfacePicker!
     @IBOutlet var rollButton: WKInterfaceButton!
     
-    let dieTypes = DieTypes()
+    var newShuffledSeries: Bool = true
+    
     let rollLogic = WKRollLogic()
     
-    var pickerChoice: Die?
-    var distributionType: DistributionType = .random
-    var diceQuantity: DiceQuantity = .one
-    
-    var newShuffledSeries: Bool = true
+    let motionManager = CMMotionManager()
+    let motionQueue = OperationQueue()
     
     // MARK: WKInterfaceController Lifecycle
     
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
-        
         // Configure interface objects here.
-        
-        // Map dice types to pickerItems array
-        let pickerItems: [WKPickerItem] = dieTypes.diceAvailable.map {
-            let pickerItem = WKPickerItem()
-            pickerItem.title = $0.displayName
-            return pickerItem
-        }
-        
-        // Apply values to the picker
-        dicePicker.setItems(pickerItems)
-        
-        // Set picker to six-sided
-        dicePicker.setSelectedItemIndex(1)
-        
     }
     
     override func willActivate() {
         // This method is called when watch view controller is about to be visible to user
         super.willActivate()
         
-        // Give the picker focus
-        dicePicker.focus()
+        // Ensure resultLabelTwo is displayed properly
+        if RollOptions.sharedInstance.diceQuantity == .two {
+            resultLabelTwo.setHidden(false)
+        }
+        else {
+            resultLabelTwo.setHidden(true)
+        }
+        
+        // Look for motion events
+        getDeviceMotionUpdates()
         
     }
     
     override func didDeactivate() {
         // This method is called when watch view controller is no longer visible
         super.didDeactivate()
+        
+        // Stop looking for motion events
+        motionManager.stopDeviceMotionUpdates()
+        
     }
     
     // MARK: Convenience
     
     func roll() -> [Int] {
         
-        switch distributionType {
+        switch RollOptions.sharedInstance.distributionType {
         case .random:
-            let rollResult = rollLogic.numRoll(diceRange: pickerChoice!)
+            let rollResult = rollLogic.numRoll(diceRange: RollOptions.sharedInstance.pickerChoice!)
             return rollResult
         case .shuffled:
-            let rollResult = rollLogic.numRollShuffled(diceRange: pickerChoice!, startNewSequence: newShuffledSeries)
+            let rollResult = rollLogic.numRollShuffled(diceRange: RollOptions.sharedInstance.pickerChoice!, startNewSequence: newShuffledSeries)
             newShuffledSeries = false
             return rollResult
         }
@@ -82,9 +78,9 @@ class InterfaceController: WKInterfaceController {
     
     func updateResultLabels() {
         
-        switch pickerChoice!.face {
+        switch RollOptions.sharedInstance.pickerChoice!.face {
         case .num:
-            switch diceQuantity {
+            switch RollOptions.sharedInstance.diceQuantity {
             case .one:
                 let oneDieResult = roll()
                 resultLabel.setText(String(oneDieResult[0]))
@@ -94,7 +90,7 @@ class InterfaceController: WKInterfaceController {
                 resultLabelTwo.setText(String(twoDieResult[1]))
             }
         case .alpha:
-            switch diceQuantity {
+            switch RollOptions.sharedInstance.diceQuantity {
             case .one:
                 break
             case .two:
@@ -103,19 +99,47 @@ class InterfaceController: WKInterfaceController {
         }
     }
     
-    // MARK: Actions
-    
-    @IBAction func pickerChanged(_ value: Int) {
+    func getDeviceMotionUpdates() {
         
-        // Set pickerChoice to reflect the appropriate Die
-        pickerChoice = dieTypes.diceAvailable[value]
+        if !motionManager.isDeviceMotionAvailable {
+            
+            // Check for device motion
+            print("Device motion is unavailable")
+            return
+            
+        }
+        
+        // Set the update interval
+        motionManager.deviceMotionUpdateInterval = 0.1
+        
+        // Start device motion updates
+        motionManager.startDeviceMotionUpdates(to: motionQueue) { (deviceMotion: CMDeviceMotion?, error: Error?) in
+            if error != nil {
+                print("Encountered error: \(error!)")
+            }
+            
+            if deviceMotion != nil {
+                self.processDeviceMotion(deviceMotion: deviceMotion!)
+            }
+        }
         
     }
+    
+    func processDeviceMotion(deviceMotion: CMDeviceMotion) {
+        
+        if deviceMotion.userAcceleration.y > 1.0 {
+            print(deviceMotion.userAcceleration.y)
+            updateResultLabels()
+        }
+        
+    }
+    
+    // MARK: Actions
     
     @IBAction func rollButtonTapped() {
         
         updateResultLabels()
         
     }
-
+    
 }

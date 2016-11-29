@@ -27,6 +27,7 @@
 		2380415E1DEC780A00890226 /* RollStructsAndEnums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2380415D1DEC780A00890226 /* RollStructsAndEnums.swift */; };
 		2380415F1DEC780A00890226 /* RollStructsAndEnums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2380415D1DEC780A00890226 /* RollStructsAndEnums.swift */; };
 		238041611DECC05E00890226 /* WKRollLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 238041601DECC05E00890226 /* WKRollLogic.swift */; };
+		238041661DEDF14B00890226 /* RollOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 238041651DEDF14B00890226 /* RollOptions.swift */; };
 		23EAC7121DE72F0A000E661A /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23EAC7111DE72F0A000E661A /* InfoViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -97,6 +98,7 @@
 		2380415A1DEC734500890226 /* OptionsInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OptionsInterfaceController.swift; sourceTree = "<group>"; };
 		2380415D1DEC780A00890226 /* RollStructsAndEnums.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RollStructsAndEnums.swift; sourceTree = "<group>"; };
 		238041601DECC05E00890226 /* WKRollLogic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WKRollLogic.swift; sourceTree = "<group>"; };
+		238041651DEDF14B00890226 /* RollOptions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RollOptions.swift; sourceTree = "<group>"; };
 		23EAC7111DE72F0A000E661A /* InfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -171,8 +173,9 @@
 			children = (
 				238041461DEC6E9A00890226 /* InterfaceController.swift */,
 				2380415A1DEC734500890226 /* OptionsInterfaceController.swift */,
-				238041481DEC6E9A00890226 /* ExtensionDelegate.swift */,
 				238041601DECC05E00890226 /* WKRollLogic.swift */,
+				238041651DEDF14B00890226 /* RollOptions.swift */,
+				238041481DEC6E9A00890226 /* ExtensionDelegate.swift */,
 				2380414A1DEC6E9A00890226 /* NotificationController.swift */,
 				2380414C1DEC6E9A00890226 /* Assets.xcassets */,
 				2380414E1DEC6E9A00890226 /* Info.plist */,
@@ -347,6 +350,7 @@
 				238041611DECC05E00890226 /* WKRollLogic.swift in Sources */,
 				238041491DEC6E9A00890226 /* ExtensionDelegate.swift in Sources */,
 				238041471DEC6E9A00890226 /* InterfaceController.swift in Sources */,
+				238041661DEDF14B00890226 /* RollOptions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
