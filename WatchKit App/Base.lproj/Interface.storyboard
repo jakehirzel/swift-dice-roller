@@ -24,7 +24,7 @@
                                 </label>
                             </items>
                         </group>
-                        <button width="1" alignment="left" verticalAlignment="center" title="ROLL" id="2vK-7h-GMg">
+                        <button width="1" alignment="center" verticalAlignment="center" title="ROLL" id="2vK-7h-GMg">
                             <connections>
                                 <action selector="rollButtonTapped" destination="AgC-eL-Hgc" id="LHy-OS-0o8"/>
                             </connections>
@@ -45,17 +45,17 @@
             <objects>
                 <controller id="c2G-zw-fUh" userLabel="Options Interface Controller" customClass="OptionsInterfaceController" customModule="WatchKit_App_Extension">
                     <items>
-                        <picker height="40" alignment="center" verticalAlignment="center" focusStyle="sequence" indicatorMode="shownWhileFocused" id="8Ji-Yq-UBA">
+                        <picker height="37" alignment="center" verticalAlignment="center" focusStyle="sequence" id="8Ji-Yq-UBA">
                             <connections>
                                 <action selector="pickerChanged:" destination="c2G-zw-fUh" id="Dk1-h5-BnO"/>
                             </connections>
                         </picker>
-                        <switch width="1" alignment="left" verticalAlignment="center" title="Two Dice" id="1Vt-rU-jxm">
+                        <switch width="1" alignment="center" verticalAlignment="center" title="Two Dice" id="1Vt-rU-jxm">
                             <connections>
                                 <action selector="twoDiceSwitchOn:" destination="c2G-zw-fUh" id="WVH-ni-fo4"/>
                             </connections>
                         </switch>
-                        <switch width="1" alignment="left" verticalAlignment="center" title="Shuffled" id="CFd-Zl-U7X">
+                        <switch width="1" alignment="center" verticalAlignment="center" title="Shuffled" id="CFd-Zl-U7X">
                             <connections>
                                 <action selector="shuffledSwitchOn:" destination="c2G-zw-fUh" id="AcH-MX-QG0"/>
                             </connections>
@@ -77,7 +77,9 @@
                 <controller id="gCD-ec-Lc9">
                     <items>
                         <label width="1" alignment="center" verticalAlignment="center" textAlignment="center" numberOfLines="8" id="B6a-bX-qo8">
-                            <string key="text">Tap the "Roll" button or shake to roll. Use the Digital Crown to select the die type on the Options Page. Selecting "Shuffled" provides each value once before repeating.</string>
+                            <string key="text">Tap the "Roll" button or flick your wrist to roll.
+
+Selecting "Shuffled" provides each value once before repeating.</string>
                             <fontDescription key="font" type="system" weight="light" pointSize="12"/>
                         </label>
                     </items>

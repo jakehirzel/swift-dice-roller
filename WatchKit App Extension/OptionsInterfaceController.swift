@@ -29,7 +29,6 @@ class OptionsInterfaceController: WKInterfaceController {
         let pickerItems: [WKPickerItem] = RollOptions.sharedInstance.dieTypes.diceAvailable.map {
             let pickerItem = WKPickerItem()
             pickerItem.title = $0.displayName
-            pickerItem.caption = "Die Type"
             return pickerItem
         }
         
