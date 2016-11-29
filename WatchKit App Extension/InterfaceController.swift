@@ -38,6 +38,13 @@ class InterfaceController: WKInterfaceController {
         // This method is called when watch view controller is about to be visible to user
         super.willActivate()
         
+        // Look for motion events
+        getDeviceMotionUpdates()
+        
+    }
+    
+    override func didAppear() {
+        
         // Ensure resultLabelTwo is displayed properly
         if RollOptions.sharedInstance.diceQuantity == .two {
             resultLabelTwo.setHidden(false)
@@ -45,9 +52,6 @@ class InterfaceController: WKInterfaceController {
         else {
             resultLabelTwo.setHidden(true)
         }
-        
-        // Look for motion events
-        getDeviceMotionUpdates()
         
     }
     
