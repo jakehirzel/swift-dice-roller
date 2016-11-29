@@ -14,14 +14,24 @@
             <objects>
                 <controller id="AgC-eL-Hgc" userLabel="Main Interface Controller" customClass="InterfaceController" customModule="WatchKit_App" customModuleProvider="target">
                     <items>
-                        <group width="1" height="60" alignment="center" verticalAlignment="center" id="Emi-JM-Qdh">
+                        <group width="1" height="60" alignment="center" verticalAlignment="center" radius="0.0" spacing="16" id="Emi-JM-Qdh">
                             <items>
-                                <label width="60" alignment="center" verticalAlignment="center" text="?" textAlignment="center" id="wcV-5G-dW4">
-                                    <fontDescription key="font" type="system" weight="heavy" pointSize="42"/>
-                                </label>
-                                <label width="60" alignment="center" verticalAlignment="center" text="?" textAlignment="center" id="957-FF-wi1">
-                                    <fontDescription key="font" type="system" weight="heavy" pointSize="42"/>
-                                </label>
+                                <group width="55" height="55" alignment="center" verticalAlignment="center" radius="25" id="OzK-hD-FC0">
+                                    <items>
+                                        <label width="60" alignment="center" verticalAlignment="center" text="?" textAlignment="center" id="wcV-5G-dW4">
+                                            <fontDescription key="font" type="system" weight="heavy" pointSize="42"/>
+                                        </label>
+                                    </items>
+                                    <color key="backgroundColor" red="0.105641" green="0.64889258149999995" blue="0.96056348089999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </group>
+                                <group width="55" height="55" alignment="center" verticalAlignment="center" radius="25" id="wsZ-Cd-b2u">
+                                    <items>
+                                        <label width="60" alignment="center" verticalAlignment="center" text="?" textAlignment="center" id="957-FF-wi1">
+                                            <fontDescription key="font" type="system" weight="heavy" pointSize="42"/>
+                                        </label>
+                                    </items>
+                                    <color key="backgroundColor" red="0.105641" green="0.64889258149999995" blue="0.96056348089999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </group>
                             </items>
                             <gestureRecognizers>
                                 <tapGestureRecognizer id="Dv5-DH-JDJ">
@@ -38,6 +48,8 @@
                         </button>
                     </items>
                     <connections>
+                        <outlet property="resultGroup" destination="OzK-hD-FC0" id="eWM-RR-Mox"/>
+                        <outlet property="resultGroupTwo" destination="wsZ-Cd-b2u" id="0zE-X9-HnQ"/>
                         <outlet property="resultLabel" destination="wcV-5G-dW4" id="8Ho-lW-wNh"/>
                         <outlet property="resultLabelTwo" destination="957-FF-wi1" id="V53-aR-Yke"/>
                         <outlet property="rollButton" destination="2vK-7h-GMg" id="0FE-B8-qa9"/>

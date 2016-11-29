@@ -17,7 +17,8 @@ class InterfaceController: WKInterfaceController {
     
     @IBOutlet var resultLabel: WKInterfaceLabel!
     @IBOutlet var resultLabelTwo: WKInterfaceLabel!
-    @IBOutlet var dicePicker: WKInterfacePicker!
+    @IBOutlet var resultGroup: WKInterfaceGroup!
+    @IBOutlet var resultGroupTwo: WKInterfaceGroup!
     @IBOutlet var rollButton: WKInterfaceButton!
     
     var newShuffledSeries: Bool = true
@@ -50,7 +51,7 @@ class InterfaceController: WKInterfaceController {
             self.animate(
                 withDuration: 0.25,
                 animations: { [weak self] in
-                    self?.resultLabelTwo.setHidden(false)
+                    self?.resultGroupTwo.setHidden(false)
                 }
             )
         }
@@ -58,7 +59,7 @@ class InterfaceController: WKInterfaceController {
             self.animate(
                 withDuration: 0.25,
                 animations: { [weak self] in
-                    self?.resultLabelTwo.setHidden(true)
+                    self?.resultGroupTwo.setHidden(true)
                 }
             )
         }
