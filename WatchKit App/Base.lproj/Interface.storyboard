@@ -14,7 +14,7 @@
             <objects>
                 <controller id="AgC-eL-Hgc" userLabel="Main Interface Controller" customClass="InterfaceController" customModule="WatchKit_App" customModuleProvider="target">
                     <items>
-                        <group width="1" height="60" alignment="center" verticalAlignment="center" radius="0.0" spacing="16" id="Emi-JM-Qdh">
+                        <group width="1" height="1" alignment="center" verticalAlignment="center" radius="0.0" spacing="16" id="Emi-JM-Qdh">
                             <items>
                                 <group width="55" height="55" alignment="center" verticalAlignment="center" radius="25" id="OzK-hD-FC0">
                                     <items>
@@ -41,18 +41,12 @@
                                 </tapGestureRecognizer>
                             </gestureRecognizers>
                         </group>
-                        <button width="1" alignment="center" verticalAlignment="center" title="ROLL" id="2vK-7h-GMg">
-                            <connections>
-                                <action selector="rollButtonTapped" destination="AgC-eL-Hgc" id="LHy-OS-0o8"/>
-                            </connections>
-                        </button>
                     </items>
                     <connections>
                         <outlet property="resultGroup" destination="OzK-hD-FC0" id="eWM-RR-Mox"/>
                         <outlet property="resultGroupTwo" destination="wsZ-Cd-b2u" id="0zE-X9-HnQ"/>
                         <outlet property="resultLabel" destination="wcV-5G-dW4" id="8Ho-lW-wNh"/>
                         <outlet property="resultLabelTwo" destination="957-FF-wi1" id="V53-aR-Yke"/>
-                        <outlet property="rollButton" destination="2vK-7h-GMg" id="0FE-B8-qa9"/>
                         <segue destination="c2G-zw-fUh" kind="relationship" relationship="nextPage" id="6b6-Ve-NTD"/>
                     </connections>
                 </controller>
@@ -99,10 +93,10 @@
                             <fontDescription key="font" style="UICTFontTextStyleHeadline"/>
                         </label>
                         <label width="1" alignment="center" verticalAlignment="center" textAlignment="center" numberOfLines="8" id="B6a-bX-qo8">
-                            <string key="text">Tap the "Roll" button or flick your wrist to roll.
+                            <string key="text">Tap or flick your wrist to roll.
 
 Selecting "Shuffled" provides each value once before repeating.</string>
-                            <fontDescription key="font" type="system" weight="light" pointSize="12"/>
+                            <fontDescription key="font" type="system" weight="light" pointSize="13"/>
                         </label>
                     </items>
                 </controller>

@@ -19,7 +19,6 @@ class InterfaceController: WKInterfaceController {
     @IBOutlet var resultLabelTwo: WKInterfaceLabel!
     @IBOutlet var resultGroup: WKInterfaceGroup!
     @IBOutlet var resultGroupTwo: WKInterfaceGroup!
-    @IBOutlet var rollButton: WKInterfaceButton!
     
     var newShuffledSeries: Bool = true
     
@@ -151,12 +150,6 @@ class InterfaceController: WKInterfaceController {
     
     // MARK: Actions
     
-    @IBAction func rollButtonTapped() {
-        
-        updateResultLabels()
-        
-    }
-
     @IBAction func resultsGroupTapped(_ sender: Any) {
         
         updateResultLabels()
