@@ -17,12 +17,19 @@
                         <group width="1" height="60" alignment="center" verticalAlignment="center" id="Emi-JM-Qdh">
                             <items>
                                 <label width="60" alignment="center" verticalAlignment="center" text="?" textAlignment="center" id="wcV-5G-dW4">
-                                    <fontDescription key="font" type="system" weight="heavy" pointSize="36"/>
+                                    <fontDescription key="font" type="system" weight="heavy" pointSize="42"/>
                                 </label>
                                 <label width="60" alignment="center" verticalAlignment="center" text="?" textAlignment="center" id="957-FF-wi1">
-                                    <fontDescription key="font" type="system" weight="heavy" pointSize="36"/>
+                                    <fontDescription key="font" type="system" weight="heavy" pointSize="42"/>
                                 </label>
                             </items>
+                            <gestureRecognizers>
+                                <tapGestureRecognizer id="Dv5-DH-JDJ">
+                                    <connections>
+                                        <action selector="resultsGroupTapped:" destination="AgC-eL-Hgc" id="rZM-lC-uAg"/>
+                                    </connections>
+                                </tapGestureRecognizer>
+                            </gestureRecognizers>
                         </group>
                         <button width="1" alignment="center" verticalAlignment="center" title="ROLL" id="2vK-7h-GMg">
                             <connections>
@@ -45,7 +52,7 @@
             <objects>
                 <controller id="c2G-zw-fUh" userLabel="Options Interface Controller" customClass="OptionsInterfaceController" customModule="WatchKit_App_Extension">
                     <items>
-                        <picker height="37" alignment="center" verticalAlignment="center" focusStyle="sequence" id="8Ji-Yq-UBA">
+                        <picker height="50" alignment="center" verticalAlignment="center" focusStyle="sequence" id="8Ji-Yq-UBA">
                             <connections>
                                 <action selector="pickerChanged:" destination="c2G-zw-fUh" id="Dk1-h5-BnO"/>
                             </connections>
@@ -71,11 +78,14 @@
             </objects>
             <point key="canvasLocation" x="467" y="345"/>
         </scene>
-        <!--Interface Controller-->
+        <!--Help Interface Controller-->
         <scene sceneID="GDO-3f-naY">
             <objects>
-                <controller id="gCD-ec-Lc9">
+                <controller id="gCD-ec-Lc9" userLabel="Help Interface Controller">
                     <items>
+                        <label alignment="center" verticalAlignment="center" text="Help:" id="YXS-rp-AcL">
+                            <fontDescription key="font" style="UICTFontTextStyleHeadline"/>
+                        </label>
                         <label width="1" alignment="center" verticalAlignment="center" textAlignment="center" numberOfLines="8" id="B6a-bX-qo8">
                             <string key="text">Tap the "Roll" button or flick your wrist to roll.
 

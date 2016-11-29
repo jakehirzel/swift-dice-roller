@@ -141,5 +141,11 @@ class InterfaceController: WKInterfaceController {
         updateResultLabels()
         
     }
+
+    @IBAction func resultsGroupTapped(_ sender: Any) {
+        
+        updateResultLabels()
+        
+    }
     
 }
