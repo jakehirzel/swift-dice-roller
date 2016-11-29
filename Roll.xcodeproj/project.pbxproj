@@ -26,6 +26,7 @@
 		2380415B1DEC734500890226 /* OptionsInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2380415A1DEC734500890226 /* OptionsInterfaceController.swift */; };
 		2380415E1DEC780A00890226 /* RollStructsAndEnums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2380415D1DEC780A00890226 /* RollStructsAndEnums.swift */; };
 		2380415F1DEC780A00890226 /* RollStructsAndEnums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2380415D1DEC780A00890226 /* RollStructsAndEnums.swift */; };
+		238041611DECC05E00890226 /* WKRollLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 238041601DECC05E00890226 /* WKRollLogic.swift */; };
 		23EAC7121DE72F0A000E661A /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23EAC7111DE72F0A000E661A /* InfoViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -95,6 +96,7 @@
 		2380414E1DEC6E9A00890226 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2380415A1DEC734500890226 /* OptionsInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OptionsInterfaceController.swift; sourceTree = "<group>"; };
 		2380415D1DEC780A00890226 /* RollStructsAndEnums.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RollStructsAndEnums.swift; sourceTree = "<group>"; };
+		238041601DECC05E00890226 /* WKRollLogic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WKRollLogic.swift; sourceTree = "<group>"; };
 		23EAC7111DE72F0A000E661A /* InfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -170,6 +172,7 @@
 				238041461DEC6E9A00890226 /* InterfaceController.swift */,
 				2380415A1DEC734500890226 /* OptionsInterfaceController.swift */,
 				238041481DEC6E9A00890226 /* ExtensionDelegate.swift */,
+				238041601DECC05E00890226 /* WKRollLogic.swift */,
 				2380414A1DEC6E9A00890226 /* NotificationController.swift */,
 				2380414C1DEC6E9A00890226 /* Assets.xcassets */,
 				2380414E1DEC6E9A00890226 /* Info.plist */,
@@ -341,6 +344,7 @@
 				2380415F1DEC780A00890226 /* RollStructsAndEnums.swift in Sources */,
 				2380415B1DEC734500890226 /* OptionsInterfaceController.swift in Sources */,
 				2380414B1DEC6E9A00890226 /* NotificationController.swift in Sources */,
+				238041611DECC05E00890226 /* WKRollLogic.swift in Sources */,
 				238041491DEC6E9A00890226 /* ExtensionDelegate.swift in Sources */,
 				238041471DEC6E9A00890226 /* InterfaceController.swift in Sources */,
 			);
@@ -598,6 +602,7 @@
 				238041551DEC6E9A00890226 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		238041581DEC6E9A00890226 /* Build configuration list for PBXNativeTarget "WatchKit App" */ = {
 			isa = XCConfigurationList;
@@ -606,6 +611,7 @@
 				238041531DEC6E9A00890226 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

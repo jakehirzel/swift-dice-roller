@@ -154,7 +154,7 @@
                                     <constraints>
                                         <constraint firstAttribute="height" constant="300" id="Kg9-mW-TJr"/>
                                     </constraints>
-                                    <string key="text">Tap the ROLL button or shake your device to roll. STANDARD provides a traditional random roll. SHUFFLED will randomly provide each number in the sequence once before repeating.</string>
+                                    <string key="text">Tap the ROLL button or shake your device to roll. STANDARD provides a traditional random roll. SHUFFLED provides each value once before repeating.</string>
                                     <fontDescription key="fontDescription" type="system" weight="light" pointSize="21"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
