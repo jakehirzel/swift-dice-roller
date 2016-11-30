@@ -18,16 +18,16 @@
                             <items>
                                 <group width="60" height="60" alignment="center" verticalAlignment="center" radius="16" id="OzK-hD-FC0">
                                     <items>
-                                        <label width="60" alignment="center" verticalAlignment="center" text="?" textAlignment="center" id="wcV-5G-dW4">
-                                            <fontDescription key="font" type="system" weight="heavy" pointSize="48"/>
+                                        <label alignment="center" verticalAlignment="center" text="?" textAlignment="center" id="wcV-5G-dW4">
+                                            <fontDescription key="font" type="system" weight="heavy" pointSize="40"/>
                                         </label>
                                     </items>
                                     <color key="backgroundColor" red="0.105641" green="0.64889258149999995" blue="0.96056348089999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </group>
                                 <group width="60" height="60" alignment="center" verticalAlignment="center" radius="16" id="wsZ-Cd-b2u">
                                     <items>
-                                        <label width="60" alignment="center" verticalAlignment="center" text="?" textAlignment="center" id="957-FF-wi1">
-                                            <fontDescription key="font" type="system" weight="heavy" pointSize="48"/>
+                                        <label alignment="center" verticalAlignment="center" text="?" textAlignment="center" id="957-FF-wi1">
+                                            <fontDescription key="font" type="system" weight="heavy" pointSize="40"/>
                                         </label>
                                     </items>
                                     <color key="backgroundColor" red="0.105641" green="0.64889258149999995" blue="0.96056348089999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

@@ -146,7 +146,7 @@ class InterfaceController: WKInterfaceController {
                 label.setText(result)
                 labelTwo?.setText(resultTwo)
                 self?.animate(
-                    withDuration: 0.125,
+                    withDuration: 0.25,
                     animations: {
                         label.setAlpha(1.0)
                         label.setVerticalAlignment(.center)
