@@ -113,11 +113,11 @@ class InterfaceController: WKInterfaceController {
         }
     }
     
+    // General function for starting to read device motion updates; requires a function to process specific device motion as well as a call to motionManager.stopDeviceMotionUpdates() -- most likely in didDeactivate(); also requires CMMotionManager() and OperationQueue() properties
     func getDeviceMotionUpdates() {
         
+        // Make sure device motion is available
         if !motionManager.isDeviceMotionAvailable {
-            
-            // Check for device motion
             print("Device motion is unavailable")
             return
             
@@ -131,7 +131,6 @@ class InterfaceController: WKInterfaceController {
             if error != nil {
                 print("Encountered error: \(error!)")
             }
-            
             if deviceMotion != nil {
                 self.processDeviceMotion(deviceMotion: deviceMotion!)
             }

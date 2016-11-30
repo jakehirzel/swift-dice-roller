@@ -175,9 +175,9 @@
 				2380415A1DEC734500890226 /* OptionsInterfaceController.swift */,
 				238041601DECC05E00890226 /* WKRollLogic.swift */,
 				238041651DEDF14B00890226 /* RollOptions.swift */,
+				2380414C1DEC6E9A00890226 /* Assets.xcassets */,
 				238041481DEC6E9A00890226 /* ExtensionDelegate.swift */,
 				2380414A1DEC6E9A00890226 /* NotificationController.swift */,
-				2380414C1DEC6E9A00890226 /* Assets.xcassets */,
 				2380414E1DEC6E9A00890226 /* Info.plist */,
 				238041441DEC6E9A00890226 /* Supporting Files */,
 			);
