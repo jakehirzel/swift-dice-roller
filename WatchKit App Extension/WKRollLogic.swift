@@ -14,12 +14,23 @@ class WKRollLogic {
     var numRepeatCheckArray: [Int] = []
     var numRepeatCheckArrayTwo: [Int] = []
     
-    func numRoll(diceRange: Die) -> [Int] {
+    func numRoll(diceRange: Die) -> (numResults: [Int]?, alphaResults: [String]?) {
         
-        var results: [Int] = []
-        results.append(Int(arc4random_uniform(UInt32(diceRange.highestValue)) + 1))
-        results.append(Int(arc4random_uniform(UInt32(diceRange.highestValue)) + 1))
-        return results
+        switch diceRange.face {
+        case .alpha:
+            var results: [String] = []
+            let numberRollForLetter = arc4random_uniform(26) + 65
+            results.append(String(UnicodeScalar(numberRollForLetter)!))
+            let numberRollForLetterTwo = arc4random_uniform(26) + 65
+            results.append(String(UnicodeScalar(numberRollForLetterTwo)!))
+            return (nil, results)
+        default:
+            var results: [Int] = []
+            results.append(Int(arc4random_uniform(UInt32(diceRange.highestValue)) + 1))
+            results.append(Int(arc4random_uniform(UInt32(diceRange.highestValue)) + 1))
+            return (results, nil)
+        }
+        
         
     }
     

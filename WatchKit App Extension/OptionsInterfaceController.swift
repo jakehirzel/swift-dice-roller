@@ -34,9 +34,9 @@ class OptionsInterfaceController: WKInterfaceController {
         
         // Apply values to the picker
         dicePicker.setItems(pickerItems)
-        
-        // Set picker to six-sided
-        dicePicker.setSelectedItemIndex(1)
+                
+        // Load picker selection from RollOptions
+        dicePicker.setSelectedItemIndex(RollOptions.sharedInstance.pickerIndex)
         
     }
     
@@ -58,7 +58,8 @@ class OptionsInterfaceController: WKInterfaceController {
     
     @IBAction func pickerChanged(_ value: Int) {
         
-        // Set pickerChoice to reflect the appropriate Die
+        // Set pickerIndex and pickerChoice to reflect the appropriate Die
+        RollOptions.sharedInstance.pickerIndex = value
         RollOptions.sharedInstance.pickerChoice = RollOptions.sharedInstance.dieTypes.diceAvailable[value]
         
         // Ensure the shuffle begins again whenever the die type changes

@@ -11,13 +11,16 @@ import Foundation
 class RollOptions {
     
     var dieTypes: DieTypes
-    var pickerChoice: Die?
+    var pickerIndex: Int
+    var pickerChoice: Die
     var distributionType: DistributionType
     var diceQuantity: DiceQuantity
     var newShuffledSeries: Bool
     
     private init() {
         self.dieTypes = DieTypes()
+        self.pickerIndex = 1
+        self.pickerChoice = dieTypes.diceAvailable[pickerIndex] // Defaults to six-sided
         self.distributionType = .random
         self.diceQuantity = .one
         self.newShuffledSeries = true

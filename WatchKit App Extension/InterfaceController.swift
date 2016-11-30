@@ -76,42 +76,47 @@ class InterfaceController: WKInterfaceController {
     
     // MARK: Convenience
     
-    func roll() -> [Int] {
+    func roll() -> (numResults: [Int]?, alphaResults: [String]?) {
         
         switch RollOptions.sharedInstance.distributionType {
         case .random:
-            let rollResult = rollLogic.numRoll(diceRange: RollOptions.sharedInstance.pickerChoice!)
-            return rollResult
+            switch RollOptions.sharedInstance.pickerChoice.face {
+            case .num:
+                let rollResult = rollLogic.numRoll(diceRange: RollOptions.sharedInstance.pickerChoice).numResults!
+                return (rollResult, nil)
+            case .alpha:
+                let rollResult = rollLogic.numRoll(diceRange: RollOptions.sharedInstance.pickerChoice).alphaResults!
+                return (nil, rollResult)
+
+            }
         case .shuffled:
-            let rollResult = rollLogic.numRollShuffled(diceRange: RollOptions.sharedInstance.pickerChoice!, startNewSequence: RollOptions.sharedInstance.newShuffledSeries)
+            let rollResult = rollLogic.numRollShuffled(diceRange: RollOptions.sharedInstance.pickerChoice, startNewSequence: RollOptions.sharedInstance.newShuffledSeries)
             RollOptions.sharedInstance.newShuffledSeries = false
-            return rollResult
+            return (rollResult, nil)
         }
         
     }
     
     func updateResultLabels() {
         
-        switch RollOptions.sharedInstance.pickerChoice!.face {
+        switch RollOptions.sharedInstance.pickerChoice.face {
         case .num:
             switch RollOptions.sharedInstance.diceQuantity {
             case .one:
-                let oneDieResult = roll()
-                animateResultLabel(label: resultLabel, labelTwo: nil, result: String(oneDieResult[0]), resultTwo: nil)
+                let oneDieResult = roll().numResults
+                animateResultLabel(label: resultLabel, labelTwo: nil, result: String(describing: (oneDieResult?[0])!), resultTwo: nil)
             case .two:
-                let twoDieResult = roll()
-                animateResultLabel(label: resultLabel, labelTwo: resultLabelTwo, result: String(twoDieResult[0]), resultTwo: String(twoDieResult[1]))
-                
-//                resultLabel.setText(String(twoDieResult[0]))
-//                resultLabelTwo.setText(String(twoDieResult[1]))
-                
+                let twoDieResult = roll().numResults
+                animateResultLabel(label: resultLabel, labelTwo: resultLabelTwo, result: String(describing: (twoDieResult?[0])!), resultTwo: String(describing: (twoDieResult?[1])!))
             }
         case .alpha:
             switch RollOptions.sharedInstance.diceQuantity {
             case .one:
-                break
+                let oneDieResult = roll().alphaResults
+                animateResultLabel(label: resultLabel, labelTwo: nil, result: (oneDieResult?[0])!, resultTwo: nil)
             case .two:
-                break
+                let twoDieResult = roll().alphaResults
+                animateResultLabel(label: resultLabel, labelTwo: resultLabelTwo, result: (twoDieResult?[0])!, resultTwo: twoDieResult?[1])
             }
         }
     }
