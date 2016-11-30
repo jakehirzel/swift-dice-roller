@@ -20,7 +20,7 @@ class InterfaceController: WKInterfaceController {
     @IBOutlet var resultGroup: WKInterfaceGroup!
     @IBOutlet var resultGroupTwo: WKInterfaceGroup!
     
-    var newShuffledSeries: Bool = true
+//    var newShuffledSeries: Bool = true
     
     let rollLogic = WKRollLogic()
     
@@ -83,8 +83,8 @@ class InterfaceController: WKInterfaceController {
             let rollResult = rollLogic.numRoll(diceRange: RollOptions.sharedInstance.pickerChoice!)
             return rollResult
         case .shuffled:
-            let rollResult = rollLogic.numRollShuffled(diceRange: RollOptions.sharedInstance.pickerChoice!, startNewSequence: newShuffledSeries)
-            newShuffledSeries = false
+            let rollResult = rollLogic.numRollShuffled(diceRange: RollOptions.sharedInstance.pickerChoice!, startNewSequence: RollOptions.sharedInstance.newShuffledSeries)
+            RollOptions.sharedInstance.newShuffledSeries = false
             return rollResult
         }
         
@@ -97,7 +97,31 @@ class InterfaceController: WKInterfaceController {
             switch RollOptions.sharedInstance.diceQuantity {
             case .one:
                 let oneDieResult = roll()
-                resultLabel.setText(String(oneDieResult[0]))
+                
+                animateResultLabel(label: resultLabel, resultOne: String(oneDieResult[0]), resultTwo: nil)
+                
+//                self.animate(
+//                    withDuration: 0.25,
+//                    animations: { [weak self] in
+//                        self?.resultLabel.setAlpha(0.0)
+//                        self?.resultLabel.setVerticalAlignment(.top)
+//                    }
+//                )
+//                
+//                DispatchQueue.main.asyncAfter(
+//                    deadline: DispatchTime.now() + 0.25,
+//                    execute: { [weak self] in
+//                        self?.resultLabel.setText(String(oneDieResult[0]))
+//                        self?.animate(
+//                            withDuration: 0.125,
+//                            animations: { [weak self] in
+//                                self?.resultLabel.setAlpha(1.0)
+//                                self?.resultLabel.setVerticalAlignment(.center)
+//                            }
+//                        )
+//                    }
+//                )
+                
             case .two:
                 let twoDieResult = roll()
                 resultLabel.setText(String(twoDieResult[0]))
@@ -111,6 +135,32 @@ class InterfaceController: WKInterfaceController {
                 break
             }
         }
+    }
+    
+    func animateResultLabel(label: WKInterfaceLabel, resultOne: String, resultTwo: String?) {
+        
+        animate(
+            withDuration: 0.25,
+            animations: {
+                label.setAlpha(0.0)
+                label.setVerticalAlignment(.top)
+            }
+        )
+        
+        DispatchQueue.main.asyncAfter(
+            deadline: DispatchTime.now() + 0.25,
+            execute: { [weak self] in
+                label.setText(resultOne)
+                self?.animate(
+                    withDuration: 0.125,
+                    animations: {
+                        label.setAlpha(1.0)
+                        label.setVerticalAlignment(.center)
+                    }
+                )
+            }
+        )
+        
     }
     
     // General function for starting to read device motion updates; requires a function to process specific device motion as well as a call to motionManager.stopDeviceMotionUpdates() -- most likely in didDeactivate(); also requires CMMotionManager() and OperationQueue() properties

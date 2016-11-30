@@ -14,11 +14,13 @@ class RollOptions {
     var pickerChoice: Die?
     var distributionType: DistributionType
     var diceQuantity: DiceQuantity
+    var newShuffledSeries: Bool
     
     private init() {
         self.dieTypes = DieTypes()
         self.distributionType = .random
         self.diceQuantity = .one
+        self.newShuffledSeries = true
     }
     
     static let sharedInstance = RollOptions()

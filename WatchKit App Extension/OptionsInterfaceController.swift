@@ -61,6 +61,9 @@ class OptionsInterfaceController: WKInterfaceController {
         // Set pickerChoice to reflect the appropriate Die
         RollOptions.sharedInstance.pickerChoice = RollOptions.sharedInstance.dieTypes.diceAvailable[value]
         
+        // Ensure the shuffle begins again whenever the die type changes
+        RollOptions.sharedInstance.newShuffledSeries = true
+        
     }
     
     @IBAction func twoDiceSwitchOn(_ value: Bool) {
@@ -72,6 +75,10 @@ class OptionsInterfaceController: WKInterfaceController {
             RollOptions.sharedInstance.diceQuantity = .one
         }
         
+        // Ensure the shuffle begins again whenever the die quantity changes
+        RollOptions.sharedInstance.newShuffledSeries = true
+
+        
     }
     
     @IBAction func shuffledSwitchOn(_ value: Bool) {
@@ -82,6 +89,10 @@ class OptionsInterfaceController: WKInterfaceController {
         else {
             RollOptions.sharedInstance.distributionType = .random
         }
+        
+        // Ensure the shuffle begins again whenever the distribution type changes
+        RollOptions.sharedInstance.newShuffledSeries = true
+
         
     }
     
