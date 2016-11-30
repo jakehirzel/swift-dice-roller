@@ -90,9 +90,16 @@ class InterfaceController: WKInterfaceController {
 
             }
         case .shuffled:
-            let rollResult = rollLogic.numRollShuffled(diceRange: RollOptions.sharedInstance.pickerChoice, startNewSequence: RollOptions.sharedInstance.newShuffledSeries)
-            RollOptions.sharedInstance.newShuffledSeries = false
-            return (rollResult, nil)
+            switch RollOptions.sharedInstance.pickerChoice.face {
+            case .num:
+                let rollResult = rollLogic.numRollShuffled(diceRange: RollOptions.sharedInstance.pickerChoice, startNewSequence: RollOptions.sharedInstance.newShuffledSeries).numResults!
+                RollOptions.sharedInstance.newShuffledSeries = false
+                return (rollResult, nil)
+            case .alpha:
+                let rollResult = rollLogic.numRollShuffled(diceRange: RollOptions.sharedInstance.pickerChoice, startNewSequence: RollOptions.sharedInstance.newShuffledSeries).alphaResults
+                RollOptions.sharedInstance.newShuffledSeries = false
+                return (nil, rollResult)
+            }
         }
         
     }
