@@ -97,35 +97,14 @@ class InterfaceController: WKInterfaceController {
             switch RollOptions.sharedInstance.diceQuantity {
             case .one:
                 let oneDieResult = roll()
-                
-                animateResultLabel(label: resultLabel, resultOne: String(oneDieResult[0]), resultTwo: nil)
-                
-//                self.animate(
-//                    withDuration: 0.25,
-//                    animations: { [weak self] in
-//                        self?.resultLabel.setAlpha(0.0)
-//                        self?.resultLabel.setVerticalAlignment(.top)
-//                    }
-//                )
-//                
-//                DispatchQueue.main.asyncAfter(
-//                    deadline: DispatchTime.now() + 0.25,
-//                    execute: { [weak self] in
-//                        self?.resultLabel.setText(String(oneDieResult[0]))
-//                        self?.animate(
-//                            withDuration: 0.125,
-//                            animations: { [weak self] in
-//                                self?.resultLabel.setAlpha(1.0)
-//                                self?.resultLabel.setVerticalAlignment(.center)
-//                            }
-//                        )
-//                    }
-//                )
-                
+                animateResultLabel(label: resultLabel, labelTwo: nil, result: String(oneDieResult[0]), resultTwo: nil)
             case .two:
                 let twoDieResult = roll()
-                resultLabel.setText(String(twoDieResult[0]))
-                resultLabelTwo.setText(String(twoDieResult[1]))
+                animateResultLabel(label: resultLabel, labelTwo: resultLabelTwo, result: String(twoDieResult[0]), resultTwo: String(twoDieResult[1]))
+                
+//                resultLabel.setText(String(twoDieResult[0]))
+//                resultLabelTwo.setText(String(twoDieResult[1]))
+                
             }
         case .alpha:
             switch RollOptions.sharedInstance.diceQuantity {
@@ -137,25 +116,30 @@ class InterfaceController: WKInterfaceController {
         }
     }
     
-    func animateResultLabel(label: WKInterfaceLabel, resultOne: String, resultTwo: String?) {
+    func animateResultLabel(label: WKInterfaceLabel, labelTwo: WKInterfaceLabel?, result: String, resultTwo: String?) {
         
         animate(
             withDuration: 0.25,
             animations: {
                 label.setAlpha(0.0)
                 label.setVerticalAlignment(.top)
+                labelTwo?.setAlpha(0.0)
+                labelTwo?.setVerticalAlignment(.top)
             }
         )
         
         DispatchQueue.main.asyncAfter(
             deadline: DispatchTime.now() + 0.25,
             execute: { [weak self] in
-                label.setText(resultOne)
+                label.setText(result)
+                labelTwo?.setText(resultTwo)
                 self?.animate(
                     withDuration: 0.125,
                     animations: {
                         label.setAlpha(1.0)
                         label.setVerticalAlignment(.center)
+                        labelTwo?.setAlpha(1.0)
+                        labelTwo?.setVerticalAlignment(.center)
                     }
                 )
             }
