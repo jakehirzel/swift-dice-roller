@@ -47,8 +47,14 @@ class RollLogic {
         let numberRollForLetter = Int(GKRandomSource.sharedRandom().nextInt(upperBound: diceRange.highestValue) + 65)
         var characterString = ""
         characterString.append(Character(UnicodeScalar(numberRollForLetter)!))
+        
+        let numberRollForLetterTwo = Int(GKRandomSource.sharedRandom().nextInt(upperBound: diceRange.highestValue) + 65)
+        var characterStringTwo = ""
+        characterStringTwo.append(Character(UnicodeScalar(numberRollForLetterTwo)!))
+
         var results: [String] = []
         results.append(characterString)
+        results.append(characterStringTwo)
         return results
         
     }
