@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BV1-FR-VrT">
-    <device id="retina3_5" orientation="portrait">
+    <device id="ipad9_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -19,14 +19,14 @@
                         <viewControllerLayoutGuide type="bottom" id="qHh-Mt-9TT"/>
                     </layoutGuides>
                     <view key="view" multipleTouchEnabled="YES" contentMode="scaleToFill" id="3se-qz-xqx">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="giG-Fr-Cf4" userLabel="Segmented Control Stack">
-                                <rect key="frame" x="16" y="432" width="288" height="28"/>
+                                <rect key="frame" x="84" y="976" width="600" height="28"/>
                                 <subviews>
                                     <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="K4c-Ok-9Rf">
-                                        <rect key="frame" x="0.0" y="0.0" width="107.5" height="29"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="224.5" height="29"/>
                                         <segments>
                                             <segment title="1 Die"/>
                                             <segment title="2 Dice"/>
@@ -37,7 +37,7 @@
                                         </connections>
                                     </segmentedControl>
                                     <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="gfy-ya-31J">
-                                        <rect key="frame" x="115.5" y="0.0" width="142" height="29"/>
+                                        <rect key="frame" x="232.5" y="0.0" width="296" height="29"/>
                                         <segments>
                                             <segment title="Standard"/>
                                             <segment title="Shuffled"/>
@@ -48,7 +48,7 @@
                                         </connections>
                                     </segmentedControl>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoLight" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CJO-Rz-Lhg">
-                                        <rect key="frame" x="265.5" y="0.0" width="22.5" height="28"/>
+                                        <rect key="frame" x="536.5" y="0.0" width="63.5" height="28"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <state key="normal">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -58,12 +58,25 @@
                                         </connections>
                                     </button>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="600" id="rAf-7h-CK4"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="rAf-7h-CK4"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=regular">
+                                    <mask key="constraints">
+                                        <include reference="rAf-7h-CK4"/>
+                                    </mask>
+                                </variation>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Y7J-oD-CQi" userLabel="Results Stack">
-                                <rect key="frame" x="13" y="22.5" width="295" height="131.5"/>
+                                <rect key="frame" x="237" y="406.5" width="294" height="131.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="50" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="naf-KU-65b">
-                                        <rect key="frame" x="0.0" y="0.0" width="137.5" height="131.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="137" height="131.5"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="137.5" id="5aK-X2-GDR"/>
                                         </constraints>
@@ -72,7 +85,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="50" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pt9-a0-x7Q">
-                                        <rect key="frame" x="157.5" y="0.0" width="137.5" height="131.5"/>
+                                        <rect key="frame" x="157" y="0.0" width="137" height="131.5"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="137.5" id="r97-Z9-U0e"/>
                                         </constraints>
@@ -86,7 +99,7 @@
                                 </connections>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y6x-ZL-Ehm">
-                                <rect key="frame" x="105.5" y="174" width="110" height="70"/>
+                                <rect key="frame" x="329" y="638" width="110" height="70"/>
                                 <fontDescription key="fontDescription" type="system" weight="thin" pointSize="48"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <state key="normal" title="ROLL"/>
@@ -95,11 +108,22 @@
                                 </connections>
                             </button>
                             <pickerView contentMode="scaleToFill" showsSelectionIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Akm-3Q-WZb">
-                                <rect key="frame" x="16" y="264" width="288" height="160"/>
+                                <rect key="frame" x="84" y="808" width="600" height="160"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
+                                    <constraint firstAttribute="width" constant="600" id="ZXH-6X-ohm"/>
                                     <constraint firstAttribute="height" constant="160" id="hPa-qN-0Va"/>
                                 </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="ZXH-6X-ohm"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=regular">
+                                    <mask key="constraints">
+                                        <include reference="ZXH-6X-ohm"/>
+                                    </mask>
+                                </variation>
                                 <connections>
                                     <outlet property="dataSource" destination="3se-qz-xqx" id="Csk-nv-1ha"/>
                                     <outlet property="delegate" destination="3se-qz-xqx" id="64x-EF-d39"/>
@@ -109,16 +133,38 @@
                         <color key="backgroundColor" red="0.10564099997282028" green="0.64889258146286011" blue="0.96056348085403442" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="giG-Fr-Cf4" secondAttribute="trailing" id="8V5-IP-4zn"/>
-                            <constraint firstItem="y6x-ZL-Ehm" firstAttribute="top" secondItem="Y7J-oD-CQi" secondAttribute="bottom" constant="20" id="DNK-ar-kCD"/>
+                            <constraint firstItem="y6x-ZL-Ehm" firstAttribute="top" secondItem="Y7J-oD-CQi" secondAttribute="bottom" constant="20" id="DNK-ar-kCD">
+                                <variation key="heightClass=regular-widthClass=regular" constant="100"/>
+                            </constraint>
                             <constraint firstItem="giG-Fr-Cf4" firstAttribute="top" secondItem="Akm-3Q-WZb" secondAttribute="bottom" constant="8" id="Gij-PY-2HB"/>
                             <constraint firstItem="Y7J-oD-CQi" firstAttribute="centerX" secondItem="y6x-ZL-Ehm" secondAttribute="centerX" id="HyU-SH-VDs"/>
                             <constraint firstAttribute="leadingMargin" secondItem="Akm-3Q-WZb" secondAttribute="leading" id="Jee-p7-Skl"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Akm-3Q-WZb" secondAttribute="trailing" id="Ju6-cg-7mh"/>
                             <constraint firstItem="qHh-Mt-9TT" firstAttribute="top" secondItem="giG-Fr-Cf4" secondAttribute="bottom" constant="20" id="Sez-iE-1ae"/>
+                            <constraint firstItem="giG-Fr-Cf4" firstAttribute="centerX" secondItem="3se-qz-xqx" secondAttribute="centerX" id="Xpl-FV-DrM"/>
                             <constraint firstItem="y6x-ZL-Ehm" firstAttribute="centerX" secondItem="giG-Fr-Cf4" secondAttribute="centerX" id="aFS-td-zsf"/>
                             <constraint firstItem="giG-Fr-Cf4" firstAttribute="leading" secondItem="3se-qz-xqx" secondAttribute="leadingMargin" id="dbr-B7-b0Z"/>
-                            <constraint firstItem="Akm-3Q-WZb" firstAttribute="top" secondItem="y6x-ZL-Ehm" secondAttribute="bottom" constant="20" id="w9V-dv-kGX"/>
+                            <constraint firstItem="Akm-3Q-WZb" firstAttribute="centerX" secondItem="3se-qz-xqx" secondAttribute="centerX" id="deq-2m-B9I"/>
+                            <constraint firstItem="Akm-3Q-WZb" firstAttribute="top" secondItem="y6x-ZL-Ehm" secondAttribute="bottom" constant="20" id="w9V-dv-kGX">
+                                <variation key="heightClass=regular-widthClass=regular" constant="100"/>
+                            </constraint>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="deq-2m-B9I"/>
+                                <exclude reference="Xpl-FV-DrM"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=regular">
+                            <mask key="constraints">
+                                <exclude reference="Jee-p7-Skl"/>
+                                <exclude reference="Ju6-cg-7mh"/>
+                                <include reference="deq-2m-B9I"/>
+                                <exclude reference="8V5-IP-4zn"/>
+                                <include reference="Xpl-FV-DrM"/>
+                                <exclude reference="dbr-B7-b0Z"/>
+                            </mask>
+                        </variation>
                     </view>
                     <connections>
                         <outlet property="dicePicker" destination="Akm-3Q-WZb" id="is0-ET-LXt"/>
@@ -143,14 +189,14 @@
             <objects>
                 <viewController storyboardIdentifier="InfoModal" id="uqq-4Y-lgB" userLabel="Info Modal" customClass="InfoViewController" customModule="Roll" customModuleProvider="target" sceneMemberID="viewController">
                     <visualEffectView key="view" opaque="NO" contentMode="scaleToFill" id="oA8-uK-QtC">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="qC6-d7-uVv">
-                            <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                            <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <subviews>
                                 <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aFP-Is-77u" userLabel="Info Text">
-                                    <rect key="frame" x="8" y="90" width="304" height="300"/>
+                                    <rect key="frame" x="8" y="362" width="752" height="300"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="300" id="Kg9-mW-TJr"/>
                                     </constraints>
@@ -163,14 +209,14 @@
                                     </connections>
                                 </label>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BHZ-ne-acn">
-                                    <rect key="frame" x="136" y="398" width="48" height="30"/>
+                                    <rect key="frame" x="360" y="670" width="48" height="30"/>
                                     <state key="normal" title="CLOSE"/>
                                     <connections>
                                         <segue destination="2he-Hd-Zh3" kind="unwind" unwindAction="unwindToMainWithSegue:" id="hXK-cC-tSV"/>
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gyE-Vf-u3r">
-                                    <rect key="frame" x="58" y="436" width="204" height="30"/>
+                                    <rect key="frame" x="282" y="708" width="204" height="30"/>
                                     <state key="normal" title="RATE US ON THE APP STORE"/>
                                     <connections>
                                         <action selector="rateButtonTapped:" destination="uqq-4Y-lgB" eventType="touchUpInside" id="lYb-Uu-Uk4"/>
