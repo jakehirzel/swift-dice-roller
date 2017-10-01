@@ -90,7 +90,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         
         // Load the pickerView text and set color to white
         let unformattedLabel = dieTypes.diceAvailable[row].displayName
-        return NSAttributedString(string: unformattedLabel, attributes: [NSForegroundColorAttributeName:UIColor.white])
+        return NSAttributedString(string: unformattedLabel, attributes: [NSAttributedStringKey.foregroundColor:UIColor.white])
         
     }
     
