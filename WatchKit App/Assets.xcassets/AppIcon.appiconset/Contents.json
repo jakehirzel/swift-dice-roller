@@ -55,8 +55,9 @@
       "subtype" : "42mm"
     },
     {
-      "idiom" : "watch-marketing",
       "size" : "1024x1024",
+      "idiom" : "watch-marketing",
+      "filename" : "Icon-App-1024-Store.png",
       "scale" : "1x"
     }
   ],
