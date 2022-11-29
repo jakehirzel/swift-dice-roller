@@ -22,7 +22,7 @@ extension UIView {
         UIView.animate(
             withDuration: 0.8,
             delay: 0.0,
-            options: UIViewAnimationOptions.curveEaseIn,
+            options: UIView.AnimationOptions.curveEaseIn,
             animations: { [weak self] in self?.alpha = 1.0 },
             completion: nil)
     }
@@ -31,7 +31,7 @@ extension UIView {
         UIView.animate(
             withDuration: 1.0,
             delay: 0.0,
-            options: UIViewAnimationOptions.curveEaseOut,
+            options: UIView.AnimationOptions.curveEaseOut,
             animations: { [weak self] in self?.alpha = 0.0 },
             completion: nil)
     }
@@ -40,7 +40,7 @@ extension UIView {
         UIView.animate(
             withDuration: 0.01,
             delay: delay,
-            options: [.curveEaseIn, UIViewAnimationOptions.allowUserInteraction],
+            options: [.curveEaseIn, UIView.AnimationOptions.allowUserInteraction],
             animations: { [weak self] in
                 self?.transform = CGAffineTransform(scaleX: 0.7, y: 0.7)
             },
@@ -49,7 +49,7 @@ extension UIView {
                 UIView.animate(
                     withDuration: 0.4,
                     delay: 0.1,
-                    options: [.curveEaseOut, UIViewAnimationOptions.allowUserInteraction],
+                    options: [.curveEaseOut, UIView.AnimationOptions.allowUserInteraction],
                     animations: { [weak self] in
                         self?.transform = CGAffineTransform(scaleX: 1, y: 1)
                     },

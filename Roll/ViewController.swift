@@ -62,7 +62,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         
     }
     
-    override func motionEnded(_ motion: UIEventSubtype, with event: UIEvent?) {
+    override func motionEnded(_ motion: UIEvent.EventSubtype, with event: UIEvent?) {
         
         // Initiate a roll when device is shaken
         if motion == .motionShake {
@@ -90,7 +90,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         
         // Load the pickerView text and set color to white
         let unformattedLabel = dieTypes.diceAvailable[row].displayName
-        return NSAttributedString(string: unformattedLabel, attributes: [NSAttributedStringKey.foregroundColor:UIColor.white])
+        return NSAttributedString(string: unformattedLabel, attributes: [NSAttributedString.Key.foregroundColor:UIColor.white])
         
     }
     

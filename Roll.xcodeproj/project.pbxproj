@@ -17,7 +17,7 @@
 		230297331DE49BC500071694 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 230297321DE49BC500071694 /* Main.storyboard */; };
 		238041371DEC6E9900890226 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 238041351DEC6E9900890226 /* Interface.storyboard */; };
 		238041391DEC6E9900890226 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 238041381DEC6E9900890226 /* Assets.xcassets */; };
-		238041401DEC6E9A00890226 /* WatchKit App Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 2380413F1DEC6E9A00890226 /* WatchKit App Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		238041401DEC6E9A00890226 /* WatchKit App Extension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 2380413F1DEC6E9A00890226 /* WatchKit App Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		238041471DEC6E9A00890226 /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 238041461DEC6E9A00890226 /* InterfaceController.swift */; };
 		238041491DEC6E9A00890226 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 238041481DEC6E9A00890226 /* ExtensionDelegate.swift */; };
 		2380414B1DEC6E9A00890226 /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2380414A1DEC6E9A00890226 /* NotificationController.swift */; };
@@ -49,15 +49,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		238041571DEC6E9A00890226 /* Embed App Extensions */ = {
+		238041571DEC6E9A00890226 /* Embed Foundation Extensions */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				238041401DEC6E9A00890226 /* WatchKit App Extension.appex in Embed App Extensions */,
+				238041401DEC6E9A00890226 /* WatchKit App Extension.appex in Embed Foundation Extensions */,
 			);
-			name = "Embed App Extensions";
+			name = "Embed Foundation Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		238041591DEC6E9A00890226 /* Embed Watch Content */ = {
@@ -219,7 +219,7 @@
 			buildConfigurationList = 238041581DEC6E9A00890226 /* Build configuration list for PBXNativeTarget "WatchKit App" */;
 			buildPhases = (
 				238041311DEC6E9900890226 /* Resources */,
-				238041571DEC6E9A00890226 /* Embed App Extensions */,
+				238041571DEC6E9A00890226 /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
@@ -255,13 +255,13 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0810;
-				LastUpgradeCheck = 1210;
+				LastUpgradeCheck = 1410;
 				ORGANIZATIONNAME = "Jake Hirzel";
 				TargetAttributes = {
 					230297161DE496FA00071694 = {
 						CreatedOnToolsVersion = 8.1;
 						DevelopmentTeam = BSAA9W64H3;
-						LastSwiftMigration = 0900;
+						LastSwiftMigration = "";
 						ProvisioningStyle = Automatic;
 					};
 					238041321DEC6E9900890226 = {
@@ -272,7 +272,7 @@
 					2380413E1DEC6E9A00890226 = {
 						CreatedOnToolsVersion = 8.1;
 						DevelopmentTeam = BSAA9W64H3;
-						LastSwiftMigration = 0900;
+						LastSwiftMigration = "";
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -449,6 +449,7 @@
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = "1,2";
+				WATCHOS_DEPLOYMENT_TARGET = 6.2;
 			};
 			name = Debug;
 		};
@@ -503,6 +504,7 @@
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
+				WATCHOS_DEPLOYMENT_TARGET = 6.2;
 			};
 			name = Release;
 		};
@@ -516,7 +518,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.jakehirzel.Roll;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -530,7 +532,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.jakehirzel.Roll;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
@@ -582,9 +584,9 @@
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 3.1;
+				WATCHOS_DEPLOYMENT_TARGET = 6.2;
 			};
 			name = Debug;
 		};
@@ -600,9 +602,9 @@
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 3.1;
+				WATCHOS_DEPLOYMENT_TARGET = 6.2;
 			};
 			name = Release;
 		};
