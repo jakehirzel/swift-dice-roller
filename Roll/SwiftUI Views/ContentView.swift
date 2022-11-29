@@ -33,6 +33,7 @@ struct ContentView: View {
                     Text("Twenty-Sided")
                     Text("A-Z")
                 }
+                .pickerStyle(.wheel)
                 HStack(alignment: .center) {
                     Picker("Die Quantity", selection: $dieQuantityChoice) {
                         Text("1 Die")
