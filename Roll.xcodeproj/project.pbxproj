@@ -15,6 +15,7 @@
 		2302972F1DE4983F00071694 /* RollLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2302972E1DE4983F00071694 /* RollLogic.swift */; };
 		230297311DE4987800071694 /* CustomAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 230297301DE4987800071694 /* CustomAnimation.swift */; };
 		230297331DE49BC500071694 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 230297321DE49BC500071694 /* Main.storyboard */; };
+		2326D14429367757003BE6AC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2326D14329367757003BE6AC /* ContentView.swift */; };
 		238041371DEC6E9900890226 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 238041351DEC6E9900890226 /* Interface.storyboard */; };
 		238041391DEC6E9900890226 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 238041381DEC6E9900890226 /* Assets.xcassets */; };
 		238041401DEC6E9A00890226 /* WatchKit App Extension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 2380413F1DEC6E9A00890226 /* WatchKit App Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -84,6 +85,7 @@
 		2302972E1DE4983F00071694 /* RollLogic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RollLogic.swift; sourceTree = "<group>"; };
 		230297301DE4987800071694 /* CustomAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomAnimation.swift; sourceTree = "<group>"; };
 		230297321DE49BC500071694 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		2326D14329367757003BE6AC /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		238041331DEC6E9900890226 /* WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		238041361DEC6E9900890226 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
 		238041381DEC6E9900890226 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -153,9 +155,18 @@
 				230297301DE4987800071694 /* CustomAnimation.swift */,
 				230297211DE496FA00071694 /* Assets.xcassets */,
 				230297231DE496FA00071694 /* LaunchScreen.storyboard */,
+				2326D14529367764003BE6AC /* SwiftUI Views */,
 				230297261DE496FA00071694 /* Info.plist */,
 			);
 			path = Roll;
+			sourceTree = "<group>";
+		};
+		2326D14529367764003BE6AC /* SwiftUI Views */ = {
+			isa = PBXGroup;
+			children = (
+				2326D14329367757003BE6AC /* ContentView.swift */,
+			);
+			path = "SwiftUI Views";
 			sourceTree = "<group>";
 		};
 		238041341DEC6E9900890226 /* WatchKit App */ = {
@@ -335,6 +346,7 @@
 			files = (
 				2380415E1DEC780A00890226 /* RollStructsAndEnums.swift in Sources */,
 				2302972F1DE4983F00071694 /* RollLogic.swift in Sources */,
+				2326D14429367757003BE6AC /* ContentView.swift in Sources */,
 				2302971D1DE496FA00071694 /* ViewController.swift in Sources */,
 				2302971B1DE496FA00071694 /* AppDelegate.swift in Sources */,
 				230297311DE4987800071694 /* CustomAnimation.swift in Sources */,
@@ -442,7 +454,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.7;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -498,7 +510,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.7;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";

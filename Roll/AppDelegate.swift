@@ -7,8 +7,11 @@
 //
 
 import UIKit
+import SwiftUI
 
-@UIApplicationMain
+
+// To shut off UIKit version of app, comment out @UIApplicationMain line below and un-comment out @main line below.
+//@UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
@@ -44,3 +47,32 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 }
 
+// To shut off SwiftUI version of app, comment out @main line below and un-comment out @UIApplicationMain line above.
+@main
+struct Roll: App {
+    var body: some Scene {
+        WindowGroup {
+            
+            // Use to bring up preview of TestView struct below.
+//            TestView()
+            
+            // Comment out TestView and turn on ContentView() to bring up the rest of the app.
+            ContentView()
+            
+        }
+    }
+}
+
+struct TestView: View {
+    var body: some View {
+        Text("Hello Testing World!")
+            .font(.title)
+            .foregroundColor(.green)
+    }
+}
+
+struct TestView_Previews: PreviewProvider {
+    static var previews: some View {
+        TestView()
+    }
+}
