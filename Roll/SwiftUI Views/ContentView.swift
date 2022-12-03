@@ -20,8 +20,24 @@ struct ContentView: View {
             Color("RollEmBlue").ignoresSafeArea()
             VStack {
                 HStack(alignment: .center, spacing: 10) {
-                    Text("Die 1")
-                    Text("Die 2")
+                    Text("24")
+                        .frame(width: 100, height: 100)
+                        .font(.system(size: 70, weight: .black))
+                        .foregroundColor(Color("RollEmBlue"))
+                        .padding()
+                        .background(
+                            RoundedRectangle(cornerRadius: 16)
+                            .foregroundColor(.white)
+                        )
+                    Text("2")
+                        .frame(width: 100, height: 100)
+                        .font(.system(size: 70, weight: .black))
+                        .foregroundColor(Color("RollEmBlue"))
+                        .padding()
+                        .background(
+                            RoundedRectangle(cornerRadius: 16)
+                            .foregroundColor(.white)
+                        )
                 }
                 Button("Roll", action: { print("Roll Button Pressed.") } )
                 Picker("Die Type:", selection: $dieTypeChoice) {
