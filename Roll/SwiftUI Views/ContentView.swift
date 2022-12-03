@@ -21,26 +21,39 @@ struct ContentView: View {
                 Color("RollEmBlue")
                     .ignoresSafeArea(.all, edges: .top)
                 VStack {
+                    Spacer()
                     HStack(alignment: .center, spacing: 10) {
                         Text("24")
-                            .frame(width: 100, height: 100)
+                            .frame(width: 125, height: 125)
                             .font(.system(size: 70, weight: .black))
                             .foregroundColor(Color("RollEmBlue"))
-                            .padding()
                             .background(
-                                RoundedRectangle(cornerRadius: 16)
+                                RoundedRectangle(cornerRadius: 40)
                                 .foregroundColor(.white)
                             )
                         Text("2")
-                            .frame(width: 100, height: 100)
+                            .frame(width: 124, height: 124)
                             .font(.system(size: 70, weight: .black))
                             .foregroundColor(Color("RollEmBlue"))
-                            .padding()
                             .background(
-                                RoundedRectangle(cornerRadius: 16)
+                                RoundedRectangle(cornerRadius: 40)
                                 .foregroundColor(.white)
                             )
                     }
+                    Spacer()
+                    ZStack {
+                        Circle()
+                            .fill(Color.white)
+                            .shadow(radius: 8)
+                        Circle()
+                            .fill(Color("RollEmBlue"))
+                            .padding(6)
+                        Image(systemName: "dice.fill")
+                            .resizable(resizingMode: .stretch)
+                            .foregroundColor(Color.white)
+                            .padding(25)
+                    }
+                    .frame(width: 124, height: 124)
                     Button("Roll", action: { print("Roll Button Pressed.") } )
                     Picker("Die Type:", selection: $dieTypeChoice) {
                         Text("Four-Sided")
