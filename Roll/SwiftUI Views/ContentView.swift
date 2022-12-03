@@ -16,10 +16,10 @@ struct ContentView: View {
     @State var rollTypeChoice = "Standard"
 
     var body: some View {
-        TabView {
+        GeometryReader { geometry in
             ZStack {
                 Color("RollEmBlue")
-                    .ignoresSafeArea(.all, edges: .top)
+                    .ignoresSafeArea()
                 VStack {
                     Spacer()
                     HStack(alignment: .center, spacing: 10) {
@@ -41,67 +41,49 @@ struct ContentView: View {
                             )
                     }
                     Spacer()
-                    ZStack {
-                        Circle()
-                            .fill(Color.white)
-                            .shadow(radius: 8)
-                        Circle()
-                            .fill(Color("RollEmBlue"))
-                            .padding(6)
-                        Image(systemName: "dice.fill")
-                            .resizable(resizingMode: .stretch)
-                            .foregroundColor(Color.white)
-                            .padding(25)
-                    }
-                    .frame(width: 124, height: 124)
-                    Button("Roll", action: { print("Roll Button Pressed.") } )
-                    Picker("Die Type:", selection: $dieTypeChoice) {
-                        Text("Four-Sided")
-                        Text("Six-Sided")
-                        Text("Eight-Sided")
-                        Text("Ten-Sided")
-                        Text("Twelve-Sided")
-                        Text("Twenty-Sided")
-                        Text("A-Z")
-                    }
-                    .pickerStyle(.wheel)
-                    HStack(alignment: .center) {
-                        Picker("Die Quantity", selection: $dieQuantityChoice) {
-                            Text("1 Die")
-                            Text("2 Dice")
+                    HStack {
+                        Spacer()
+                        VStack {
+                            Image(systemName: "gearshape.circle.fill")
+                                .resizable()
+                                .frame(width: 30, height: 30)
+                                .padding(.top, 10)
+                            Text("Settings")
+                                .font(.footnote)
+                            Spacer()
                         }
-                        .pickerStyle(.segmented)
-                        Picker("RollType", selection: $rollTypeChoice) {
-                            Text("Standard")
-                            Text("Shuffled")
+                        Spacer()
+                        ZStack {
+                            Circle()
+                                .fill(Color.white)
+                                .shadow(radius: 8)
+                            Circle()
+                                .fill(Color("RollEmBlue"))
+                                .padding(6)
+                            Image(systemName: "dice.fill")
+                                .resizable(resizingMode: .stretch)
+                                .foregroundColor(Color.white)
+                                .padding(25)
                         }
-                        .pickerStyle(.segmented)
-                        Button(action: { print("Roll Button Pressed.") } ) {
-                            Image(systemName: "info.circle")
+                            .frame(width: 100, height: 100)
+                            .offset(y: -geometry.size.height/8/2)
+                        Spacer()
+                        VStack {
+                            Image(systemName: "info.circle.fill")
+                                .resizable()
+                                .frame(width: 30, height: 30)
+                                .padding(.top, 10)
+                            Text("About")
+                                .font(.footnote)
+                            Spacer()
                         }
+                        Spacer()
                     }
-                    .padding()
+                        .frame(width: geometry.size.width, height: geometry.size.height/8)
+                        .background(Color.white.shadow(radius: 4))
                 }
-                .foregroundColor(.white)
+                    .ignoresSafeArea(.all, edges: .bottom)
             }
-                .tabItem {
-                    Image(systemName: "house.fill")
-                    Text("Home")
-                }
-            Text("Roll")
-                .font(.largeTitle)
-                .fontWeight(.heavy)
-                .tabItem {
-                    Image(systemName: "dice")
-                    Text("Roll")
-                }
-            Text("Info")
-                .font(.largeTitle)
-                .fontWeight(.heavy)
-                .tabItem {
-                    Image(systemName: "info.circle.fill")
-                    Text("Info")
-                }
         }
     }
 }
@@ -111,3 +93,31 @@ struct ContentView_Previews: PreviewProvider {
         ContentView()
     }
 }
+
+//Button("Roll", action: { print("Roll Button Pressed.") } )
+//Picker("Die Type:", selection: $dieTypeChoice) {
+//    Text("Four-Sided")
+//    Text("Six-Sided")
+//    Text("Eight-Sided")
+//    Text("Ten-Sided")
+//    Text("Twelve-Sided")
+//    Text("Twenty-Sided")
+//    Text("A-Z")
+//}
+//.pickerStyle(.wheel)
+//HStack(alignment: .center) {
+//    Picker("Die Quantity", selection: $dieQuantityChoice) {
+//        Text("1 Die")
+//        Text("2 Dice")
+//    }
+//    .pickerStyle(.segmented)
+//    Picker("RollType", selection: $rollTypeChoice) {
+//        Text("Standard")
+//        Text("Shuffled")
+//    }
+//    .pickerStyle(.segmented)
+//    Button(action: { print("Roll Button Pressed.") } ) {
+//        Image(systemName: "info.circle")
+//    }
+//}
+//    .padding()
