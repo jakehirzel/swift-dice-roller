@@ -43,14 +43,17 @@ struct ContentView: View {
                     Spacer()
                     HStack {
                         Spacer()
-                        VStack {
-                            Image(systemName: "gearshape.circle.fill")
-                                .resizable()
-                                .frame(width: 30, height: 30)
-                                .padding(.top, 10)
-                            Text("Settings")
-                                .font(.footnote)
-                            Spacer()
+                        Button(action: { print("Settings Button Pressed.") } ) {
+                            VStack {
+                                Image(systemName: "gearshape.circle.fill")
+                                    .resizable()
+                                    .frame(width: 30, height: 30)
+                                    .padding(.top, 10)
+                                Text("Settings")
+                                    .font(.footnote)
+                                Spacer()
+                            }
+                            .foregroundColor(Color("RollEmBlue"))
                         }
                         Spacer()
                         ZStack {
@@ -68,14 +71,17 @@ struct ContentView: View {
                             .frame(width: 100, height: 100)
                             .offset(y: -geometry.size.height/8/2)
                         Spacer()
-                        VStack {
-                            Image(systemName: "info.circle.fill")
-                                .resizable()
-                                .frame(width: 30, height: 30)
-                                .padding(.top, 10)
-                            Text("About")
-                                .font(.footnote)
-                            Spacer()
+                        Button(action: { print("About Button Pressed.") } ) {
+                            VStack {
+                                Image(systemName: "info.circle.fill")
+                                    .resizable()
+                                    .frame(width: 30, height: 30)
+                                    .padding(.top, 10)
+                                Text("About")
+                                    .font(.footnote)
+                                Spacer()
+                            }
+                            .foregroundColor(Color("RollEmBlue"))
                         }
                         Spacer()
                     }
