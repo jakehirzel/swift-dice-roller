@@ -11,12 +11,9 @@ import SwiftUI
 
 struct ContentView: View {
 
-//    let dieTypes = DieTypes()
-    
-    lazy var diceAvailable = DieTypes().diceAvailable
+    let diceAvailable = DieTypes().diceAvailable
     let rollLogic = RollLogic()
     
-//    var pickerChoice: Die?
 //    var distributionType: DistributionType = .random
 //    var diceQuantity: DiceQuantity = .one
     
@@ -24,7 +21,7 @@ struct ContentView: View {
     
     @State var showSettingsPopover = false
     @State var showAboutPopover = false
-    @State var dieTypeChoice: Die = diceAvailable[1]
+    @State var dieTypeChoice = "sixSidedNum"
     @State var dieQuantityChoice = 0
     @State var rollTypeChoice = 0
 
@@ -73,24 +70,9 @@ struct ContentView: View {
                                 VStack {
                                     Spacer()
                                     Picker("Die Type:", selection: $dieTypeChoice) {
-
-                                        ForEach(diceAvailable, id: \.self) { die in
-                                            Text(die.displayName).tag(die.hashValue)
+                                        ForEach(diceAvailable, id: \.name) { die in
+                                            Text(die.displayName)
                                         }
-                                        
-//                                        ForEach(modelData.mealTotalArray, id: \.self) { mealTotal in
-//                                            Text(String(format: "$%.2f", mealTotal))
-//                                        }
-
-                                        
-//                                        Text("Four-Sided").tag(0)
-//                                        Text("Six-Sided").tag(1)
-//                                        Text("Eight-Sided").tag(2)
-//                                        Text("Ten-Sided").tag(3)
-//                                        Text("Twelve-Sided").tag(4)
-//                                        Text("Twenty-Sided").tag(5)
-//                                        Text("A-Z").tag(6)
-                                        
                                     }
                                     .pickerStyle(.wheel)
                                     HStack(alignment: .center) {

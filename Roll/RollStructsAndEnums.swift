@@ -23,15 +23,18 @@ enum DiceQuantity: Int {
     case two = 2
 }
 
-struct Die: Hashable {
+struct Die: Hashable, Identifiable {
     let name: String
     let displayName: String
     let lowestValue: Int
     let highestValue: Int
     let face: DieFace
+    var id: String {
+        name
+    }
 }
 
-struct DieTypes: Hashable {
+struct DieTypes {
     let diceAvailable: [Die] = [
         Die(name: "fourSidedNum", displayName: "Four-Sided", lowestValue: 1, highestValue: 4, face: .num),
         Die(name: "sixSidedNum", displayName: "Six-Sided", lowestValue: 1, highestValue: 6, face: .num),
