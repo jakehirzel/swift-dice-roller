@@ -11,9 +11,11 @@ import SwiftUI
 
 struct ContentView: View {
 
-    @State var dieTypeChoice = "Six-Sided"
-    @State var dieQuantityChoice = "1 Die"
-    @State var rollTypeChoice = "Standard"
+    @State var showSettingsPopover = false
+    @State var showAboutPopover = false
+    @State var dieTypeChoice = 1
+    @State var dieQuantityChoice = 0
+    @State var rollTypeChoice = 0
 
     var body: some View {
         GeometryReader { geometry in
@@ -43,7 +45,9 @@ struct ContentView: View {
                     Spacer()
                     HStack {
                         Spacer()
-                        Button(action: { print("Settings Button Pressed.") } ) {
+                        Button(action: {
+                            showSettingsPopover = true
+                        } ) {
                             VStack {
                                 Image(systemName: "gearshape.circle.fill")
                                     .resizable()
@@ -54,6 +58,40 @@ struct ContentView: View {
                                 Spacer()
                             }
                             .foregroundColor(Color("RollEmBlue"))
+                            .popover(isPresented: $showSettingsPopover) {
+                                VStack {
+                                    Spacer()
+                                    Picker("Die Type:", selection: $dieTypeChoice) {
+                                        Text("Four-Sided").tag(0)
+                                        Text("Six-Sided").tag(1)
+                                        Text("Eight-Sided").tag(2)
+                                        Text("Ten-Sided").tag(3)
+                                        Text("Twelve-Sided").tag(4)
+                                        Text("Twenty-Sided").tag(5)
+                                        Text("A-Z").tag(6)
+                                    }
+                                    .pickerStyle(.wheel)
+                                    HStack(alignment: .center) {
+                                        Picker("Die Quantity", selection: $dieQuantityChoice) {
+                                            Text("1 Die").tag(0)
+                                            Text("2 Dice").tag(1)
+                                        }
+                                        .pickerStyle(.segmented)
+                                        Picker("RollType", selection: $rollTypeChoice) {
+                                            Text("Standard").tag(0)
+                                            Text("Shuffled").tag(1)
+                                        }
+                                        .pickerStyle(.segmented)
+                                    }
+                                        .padding()
+                                    Spacer()
+                                    Button("Dismiss") {
+                                        showSettingsPopover = false
+                                    }
+                                }
+                                .padding()
+//                                .frame(width: 200, height: 25)
+                            }
                         }
                         Spacer()
                         ZStack {
@@ -69,9 +107,11 @@ struct ContentView: View {
                                 .padding(25)
                         }
                             .frame(width: 100, height: 100)
-                            .offset(y: -geometry.size.height/8/2)
+                            .offset(x: -4, y: -geometry.size.height/8/2)
                         Spacer()
-                        Button(action: { print("About Button Pressed.") } ) {
+                        Button(action: {
+                                showAboutPopover = true
+                        } ) {
                             VStack {
                                 Image(systemName: "info.circle.fill")
                                     .resizable()
@@ -82,6 +122,23 @@ struct ContentView: View {
                                 Spacer()
                             }
                             .foregroundColor(Color("RollEmBlue"))
+                            .popover(isPresented: $showAboutPopover) {
+                                VStack {
+                                    Spacer()
+                                    Text("Tap the ROLL button or shake your device to roll. STANDARD provides a traditional random roll. SHUFFLED provides each value once before repeating.")
+                                        .foregroundColor(Color.black)
+                                    Spacer()
+                                    Button("Rate us on the App Store.") {
+                                        print( { Text("Rate us button pressed.") } )
+                                    }
+                                    Spacer()
+                                    Button("Dismiss") {
+                                        showAboutPopover = false
+                                    }
+                                }
+                                .padding()
+//                                .frame(width: 200, height: 25)
+                            }
                         }
                         Spacer()
                     }
@@ -99,31 +156,3 @@ struct ContentView_Previews: PreviewProvider {
         ContentView()
     }
 }
-
-//Button("Roll", action: { print("Roll Button Pressed.") } )
-//Picker("Die Type:", selection: $dieTypeChoice) {
-//    Text("Four-Sided")
-//    Text("Six-Sided")
-//    Text("Eight-Sided")
-//    Text("Ten-Sided")
-//    Text("Twelve-Sided")
-//    Text("Twenty-Sided")
-//    Text("A-Z")
-//}
-//.pickerStyle(.wheel)
-//HStack(alignment: .center) {
-//    Picker("Die Quantity", selection: $dieQuantityChoice) {
-//        Text("1 Die")
-//        Text("2 Dice")
-//    }
-//    .pickerStyle(.segmented)
-//    Picker("RollType", selection: $rollTypeChoice) {
-//        Text("Standard")
-//        Text("Shuffled")
-//    }
-//    .pickerStyle(.segmented)
-//    Button(action: { print("Roll Button Pressed.") } ) {
-//        Image(systemName: "info.circle")
-//    }
-//}
-//    .padding()
