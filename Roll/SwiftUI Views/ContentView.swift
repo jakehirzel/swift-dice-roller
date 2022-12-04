@@ -22,8 +22,8 @@ struct ContentView: View {
     @State var showSettingsPopover = false
     @State var showAboutPopover = false
     @State var dieTypeChoice = "sixSidedNum"
-    @State var dieQuantityChoice = 0
-    @State var rollTypeChoice = 0
+    @State var dieQuantityChoice: DiceQuantity = .two
+    @State var rollTypeChoice: DistributionType = .shuffled
 
     var body: some View {
         GeometryReader { geometry in
@@ -77,13 +77,13 @@ struct ContentView: View {
                                     .pickerStyle(.wheel)
                                     HStack(alignment: .center) {
                                         Picker("Die Quantity", selection: $dieQuantityChoice) {
-                                            Text("1 Die").tag(0)
-                                            Text("2 Dice").tag(1)
+                                            Text("1 Die").tag(DiceQuantity.one)
+                                            Text("2 Dice").tag(DiceQuantity.two)
                                         }
                                         .pickerStyle(.segmented)
-                                        Picker("RollType", selection: $rollTypeChoice) {
-                                            Text("Standard").tag(0)
-                                            Text("Shuffled").tag(1)
+                                        Picker("Roll Type", selection: $rollTypeChoice) {
+                                            Text("Standard").tag(DistributionType.random)
+                                            Text("Shuffled").tag(DistributionType.shuffled)
                                         }
                                         .pickerStyle(.segmented)
                                     }

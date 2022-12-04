@@ -13,14 +13,20 @@ enum DieFace {
     case alpha
 }
 
-enum DistributionType {
+enum DistributionType: String, CaseIterable, Identifiable {
     case random
     case shuffled
+    var id: String {
+        self.rawValue
+    }
 }
 
-enum DiceQuantity: Int {
+enum DiceQuantity: Int, CaseIterable, Identifiable {
     case one = 1
     case two = 2
+    var id: Int {
+        self.rawValue
+    }
 }
 
 struct Die: Hashable, Identifiable {
